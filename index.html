@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Examen de Formación Ciudadana</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="hoja">
+  <div class="encabezado">
+    <img src="perfil.jpg" alt="Foto de perfil" class="foto-perfil">
+    <h1>Examen de Formación Ciudadana</h1>
+    <p>Diseñado especialmente para ti, Ojitos</p>
+  </div>
+
+  <div class="cuerpo">
+
+    <!-- Pantalla de inicio -->
+    <div id="inicio">
+      <p class="intro">Un repaso de 20 preguntas sobre sujeto de derecho, capacidad de goce y de ejercicio, el concebido, la nacionalidad y la ciudadanía. Cada respuesta muestra de inmediato si es correcta, con su justificación.</p>
+      <div class="datos">
+        <div><b>20</b> preguntas</div>
+        <div><b>~8 min</b> duración estimada</div>
+        <div><b>4</b> alternativas por pregunta</div>
+      </div>
+      <div class="controles">
+        <button class="principal" id="btnEmpezar">Comenzar examen</button>
+      </div>
+    </div>
+
+    <!-- Pantalla de pregunta -->
+    <div id="juego" class="oculto">
+      <div class="avance-wrap">
+        <span class="avance-num" id="avanceNum">1 / 20</span>
+        <div class="avance-pista"><div class="avance-barra" id="avanceBarra"></div></div>
+      </div>
+
+      <div class="pregunta-num" id="preguntaNum">Pregunta 1</div>
+      <p class="pregunta-texto" id="preguntaTexto"></p>
+
+      <div class="opciones" id="opciones"></div>
+
+      <div class="justificacion" id="justificacion"></div>
+
+      <div class="controles">
+        <button class="principal" id="btnSiguiente" disabled>Siguiente</button>
+      </div>
+    </div>
+
+    <!-- Pantalla de resultado -->
+    <div id="resultado" class="oculto">
+      <div class="nota-circulo">
+        <div class="interior">
+          <div class="num" id="notaNum">0/20</div>
+          <div class="sobre">correctas</div>
+        </div>
+      </div>
+      <h2 id="notaTitulo">Resultado</h2>
+      <p class="veredicto" id="notaVeredicto"></p>
+
+      <div class="repaso" id="repaso"></div>
+
+      <div class="acciones-final">
+        <button class="fantasma" id="btnRepetir">Repetir examen</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
