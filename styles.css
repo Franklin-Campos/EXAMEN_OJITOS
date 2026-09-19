@@ -54,7 +54,7 @@ body{
 }
 
 .foto-perfil{
-  width: 170x; height: 170px;
+  width: 175px; height: 175px;
   margin: 0 auto 14px;
   border-radius: 50%;
   object-fit: cover;
