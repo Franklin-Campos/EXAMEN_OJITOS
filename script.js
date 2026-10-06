@@ -1,182 +1,489 @@
-(function(){
-  const preguntas = [
-    {p:"¿Qué tipo de división celular permite el crecimiento y la reparación de tejidos en los seres vivos?",
-     o:["Meiosis.","Mitosis.","Fecundación.","Conjugación."],
-     r:1, j:"La mitosis es el proceso de división celular que permite el crecimiento del organismo y la reparación de tejidos, generando células genéticamente idénticas."},
-    {p:"¿Cuántas células hijas se producen al final de un proceso de mitosis y qué carga cromosómica poseen respecto a la célula madre?",
-     o:["Dos células con la mitad de los cromosomas.","Dos células genéticamente idénticas a la célula madre.","Cuatro células con la mitad de los cromosomas.","Una célula con el doble de cromosomas."],
-     r:1, j:"La mitosis produce dos células hijas con la misma carga genética que la célula madre."},
-    {p:"¿En qué etapa del ciclo celular se duplica el material genético antes de la división celular?",
-     o:["Profase.","Interfase (fase S).","Anafase.","Telofase."],
-     r:1, j:"Durante la interfase, específicamente en la fase S, se produce la duplicación del ADN antes de que la célula entre en división."},
-    {p:"¿Cuál es la función biológica principal de la meiosis?",
-     o:["Reparar tejidos dañados.","Producir células somáticas idénticas.","Formar gametos con la mitad de la carga cromosómica, para la reproducción sexual.","Generar energía celular."],
-     r:2, j:"La meiosis produce células sexuales (gametos) con la mitad de los cromosomas, lo cual es indispensable para la reproducción sexual."},
-    {p:"¿Cuántas divisiones celulares sucesivas ocurren durante la meiosis?",
-     o:["Una.","Dos.","Tres.","Cuatro."],
-     r:1, j:"La meiosis consta de dos divisiones celulares sucesivas (meiosis I y meiosis II), que en conjunto producen cuatro células haploides."},
-    {p:"¿Qué fenómeno ocurre durante la meiosis que incrementa la variabilidad genética de los gametos?",
-     o:["La duplicación exacta del ADN.","El entrecruzamiento (recombinación genética) entre cromosomas homólogos.","La fusión de dos células.","La formación de la pared celular."],
-     r:1, j:"El entrecruzamiento o recombinación genética entre cromosomas homólogos durante la meiosis incrementa la variabilidad genética de los gametos resultantes."},
-    {p:"¿Qué diferencia fundamental existe entre la mitosis y la meiosis en cuanto al número de cromosomas de las células resultantes?",
-     o:["En la mitosis se mantiene el número de cromosomas; en la meiosis se reduce a la mitad.","En ambas se reduce a la mitad.","En ambas se mantiene igual.","En la mitosis se reduce a la mitad y en la meiosis se mantiene igual."],
-     r:0, j:"En la mitosis, las células hijas conservan el mismo número de cromosomas que la célula madre; en la meiosis, ese número se reduce a la mitad."},
-    {p:"¿Qué es la reproducción vegetativa en las plantas?",
-     o:["Una forma de reproducción sexual mediante la unión de gametos.","Una forma de reproducción asexual en la que una nueva planta se origina a partir de una parte de la planta madre (tallo, raíz u hoja).","Un proceso exclusivo de los animales.","Un tipo de meiosis vegetal."],
-     r:1, j:"La reproducción vegetativa es asexual: una nueva planta surge a partir de un fragmento de la planta original, sin intervención de gametos."},
-    {p:"¿Cuál de las siguientes es una técnica de propagación vegetativa utilizada en la agricultura para obtener nuevas plantas genéticamente idénticas a la planta original?",
-     o:["La polinización cruzada.","El injerto o el esqueje.","La fecundación doble.","La meiosis espórica."],
-     r:1, j:"El injerto y el esqueje son técnicas de propagación vegetativa utilizadas en la agricultura para obtener plantas genéticamente idénticas a la original."},
-    {p:"¿Qué ventaja ofrece la reproducción vegetativa frente a la reproducción sexual en las plantas?",
-     o:["Genera mayor variabilidad genética.","Permite obtener plantas genéticamente idénticas a la planta madre de forma más rápida.","Requiere obligatoriamente la intervención de dos plantas distintas.","Siempre produce semillas."],
-     r:1, j:"La reproducción vegetativa permite obtener, de manera rápida, nuevas plantas genéticamente idénticas a la planta madre, sin depender de la polinización."},
-    {p:"¿Qué es el ciclo menstrual?",
-     o:["Un proceso exclusivo del embarazo.","El conjunto de cambios cíclicos que ocurren en el aparato reproductor femenino, generalmente cada 28 días, para preparar el cuerpo ante una posible fecundación.","Un proceso que ocurre solo una vez en la vida.","Un proceso exclusivamente hormonal masculino."],
-     r:1, j:"El ciclo menstrual es un conjunto de cambios hormonales y físicos cíclicos en el aparato reproductor femenino, que prepara al cuerpo para una posible fecundación."},
-    {p:"¿Cuál es la duración promedio de un ciclo menstrual típico?",
-     o:["7 días.","14 días.","Aproximadamente 28 días.","60 días."],
-     r:2, j:"Aunque puede variar entre mujeres, la duración promedio de un ciclo menstrual típico es de aproximadamente 28 días."},
-    {p:"¿Qué proceso del ciclo menstrual consiste en la liberación de un óvulo maduro desde el ovario?",
-     o:["Menstruación.","Ovulación.","Implantación.","Fecundación."],
-     r:1, j:"La ovulación es el proceso mediante el cual el ovario libera un óvulo maduro, aproximadamente a la mitad del ciclo menstrual."},
-    {p:"¿Dónde ocurre habitualmente la fecundación del óvulo por el espermatozoide en el ser humano?",
-     o:["En el útero.","En las trompas de Falopio.","En el ovario.","En la vagina."],
-     r:1, j:"La fecundación suele ocurrir en las trompas de Falopio, donde el óvulo liberado se encuentra con los espermatozoides."},
-    {p:"¿Qué se forma inmediatamente después de la fecundación del óvulo por el espermatozoide?",
-     o:["El embrión.","El cigoto.","El feto.","La placenta."],
-     r:1, j:"Tras la unión del óvulo y el espermatozoide se forma el cigoto, la primera célula del nuevo ser humano, con la carga genética combinada de ambos progenitores."},
-    {p:"¿En qué estructura del útero se implanta el cigoto para continuar su desarrollo?",
-     o:["El cuello uterino.","El endometrio.","Las trompas de Falopio.","El ovario."],
-     r:1, j:"El cigoto, tras dividirse varias veces, se implanta en el endometrio, la capa interna del útero, donde continúa su desarrollo."},
-    {p:"¿A partir de qué semana aproximada de desarrollo se denomina feto al producto de la concepción, luego de la etapa embrionaria?",
-     o:["A partir de la semana 2.","A partir de la semana 8 o 9.","A partir de la semana 20.","Solo al nacer."],
-     r:1, j:"Aproximadamente a partir de la octava o novena semana de desarrollo, el embrión pasa a denominarse feto."},
-    {p:"¿Qué órgano permite el intercambio de nutrientes, oxígeno y desechos entre la madre y el feto durante el embarazo?",
-     o:["El ovario.","La placenta.","El endometrio.","La trompa de Falopio."],
-     r:1, j:"La placenta es el órgano que permite el intercambio de nutrientes, oxígeno y desechos entre la circulación materna y la fetal durante el embarazo."},
-    {p:"¿Cuáles son las principales etapas del ciclo de vida humano, en orden general?",
-     o:["Adultez, niñez, vejez, nacimiento.","Concepción y desarrollo prenatal, nacimiento, infancia, adolescencia, adultez y vejez.","Solo nacimiento y muerte.","Fecundación, vejez y adolescencia únicamente."],
-     r:1, j:"El ciclo de vida humano comprende, en orden general, la concepción y el desarrollo prenatal, el nacimiento, la infancia, la adolescencia, la adultez y la vejez."},
-    {p:"¿Qué cambios fisiológicos caracterizan principalmente a la etapa de la adolescencia dentro del ciclo de vida humano?",
-     o:["La pérdida progresiva de funciones corporales.","El desarrollo de los caracteres sexuales secundarios y la maduración del sistema reproductor, producto de la pubertad.","La formación del cigoto.","La implantación del embrión."],
-     r:1, j:"La adolescencia está marcada por la pubertad, etapa en la que se desarrollan los caracteres sexuales secundarios y madura el sistema reproductor."}
-  ];
+// ==================== DATOS DEL CUESTIONARIO ====================
+const preguntas = [
+  {
+    id: 1,
+    tema: "Cantar de gesta",
+    pregunta: "¿Qué es un cantar de gesta?",
+    opciones: {
+      A: "Una composición lírica dedicada principalmente al amor.",
+      B: "Un relato épico en verso que narra las hazañas de un héroe.",
+      C: "Una obra teatral de carácter religioso.",
+      D: "Una novela breve de carácter humorístico."
+    },
+    correcta: "B",
+    justificacion: "Los cantares de gesta son poemas épicos medievales que narran las hazañas, aventuras y valores de héroes, generalmente relacionados con acontecimientos históricos o legendarios."
+  },
+  {
+    id: 2,
+    tema: "Mío Cid",
+    pregunta: "¿Quién es el protagonista principal de El cantar de Mío Cid?",
+    opciones: {
+      A: "Don Quijote de la Mancha.",
+      B: "Roldán.",
+      C: "Rodrigo Díaz de Vivar.",
+      D: "Alfonso X."
+    },
+    correcta: "C",
+    justificacion: "El protagonista es Rodrigo Díaz de Vivar, conocido como el Cid Campeador, personaje histórico que se convirtió en una figura legendaria de la literatura medieval española."
+  },
+  {
+    id: 3,
+    tema: "Mío Cid",
+    pregunta: "¿Cuál es el tema central de El cantar de Mío Cid?",
+    opciones: {
+      A: "La búsqueda de un amor imposible.",
+      B: "La recuperación de la honra y el reconocimiento social del héroe.",
+      C: "La crítica de la sociedad renacentista.",
+      D: "La vida de los campesinos medievales."
+    },
+    correcta: "B",
+    justificacion: "El Cid pierde su honra al ser desterrado injustamente y, mediante sus acciones y victorias, consigue recuperar su prestigio y posición ante el rey y la sociedad."
+  },
+  {
+    id: 4,
+    tema: "Mío Cid",
+    pregunta: "¿Por qué es desterrado el Cid al inicio de la obra?",
+    opciones: {
+      A: "Porque abandona voluntariamente Castilla.",
+      B: "Porque es acusado de traición y pierde el favor del rey Alfonso VI.",
+      C: "Porque se niega a luchar contra los musulmanes.",
+      D: "Porque desobedece a sus vasallos."
+    },
+    correcta: "B",
+    justificacion: "El Cid es acusado injustamente de apropiarse de parte de los tributos enviados al rey. Como consecuencia, Alfonso VI ordena su destierro."
+  },
+  {
+    id: 5,
+    tema: "Mío Cid",
+    pregunta: "¿Cuál de los siguientes personajes representa una importante relación familiar del Cid?",
+    opciones: {
+      A: "Dulcinea del Toboso.",
+      B: "Doña Elvira y Doña Sol.",
+      C: "Doña Inés.",
+      D: "Marcela."
+    },
+    correcta: "B",
+    justificacion: "Doña Elvira y Doña Sol son las hijas del Cid. Su matrimonio con los infantes de Carrión constituye una parte importante de la trama y posteriormente provoca un conflicto relacionado con la honra familiar."
+  },
+  {
+    id: 6,
+    tema: "Lazarillo de Tormes",
+    pregunta: "¿A qué género pertenece principalmente El Lazarillo de Tormes?",
+    opciones: {
+      A: "Novela picaresca.",
+      B: "Novela caballeresca.",
+      C: "Novela pastoril.",
+      D: "Novela histórica."
+    },
+    correcta: "A",
+    justificacion: "El Lazarillo de Tormes es considerada una de las primeras grandes obras de la novela picaresca. Presenta la vida de un personaje humilde que debe utilizar su ingenio para sobrevivir."
+  },
+  {
+    id: 7,
+    tema: "Lazarillo de Tormes",
+    pregunta: "¿Quién narra la historia de El Lazarillo de Tormes?",
+    opciones: {
+      A: "El ciego.",
+      B: "El escudero.",
+      C: "Lázaro de Tormes.",
+      D: "El arcipreste de San Salvador."
+    },
+    correcta: "C",
+    justificacion: "La obra está narrada en primera persona por Lázaro, quien cuenta su vida desde su infancia y las experiencias que tuvo al servicio de diferentes amos."
+  },
+  {
+    id: 8,
+    tema: "Lazarillo de Tormes",
+    pregunta: "¿Cuál es una característica fundamental del protagonista de El Lazarillo de Tormes?",
+    opciones: {
+      A: "Es un caballero de origen noble.",
+      B: "Es un personaje humilde que utiliza su ingenio para sobrevivir.",
+      C: "Es un héroe que busca conquistar territorios.",
+      D: "Es un príncipe que busca recuperar su reino."
+    },
+    correcta: "B",
+    justificacion: "Lázaro pertenece a un ambiente social humilde y enfrenta el hambre y la pobreza. Para sobrevivir, desarrolla astucia e ingenio, especialmente frente a sus diferentes amos."
+  },
+  {
+    id: 9,
+    tema: "Lazarillo de Tormes",
+    pregunta: "¿Cuál de los siguientes personajes es uno de los primeros amos de Lázaro?",
+    opciones: {
+      A: "El ciego.",
+      B: "El Cid.",
+      C: "Sancho Panza.",
+      D: "El bachiller Sansón Carrasco."
+    },
+    correcta: "A",
+    justificacion: "El ciego es el primer amo importante de Lázaro. Durante su servicio, el muchacho aprende mediante experiencias difíciles a ser más astuto y desconfiado."
+  },
+  {
+    id: 10,
+    tema: "Lazarillo de Tormes",
+    pregunta: "¿Qué aspecto de la sociedad critica especialmente El Lazarillo de Tormes?",
+    opciones: {
+      A: "La vida de los héroes mitológicos.",
+      B: "La corrupción, la hipocresía y las desigualdades sociales.",
+      C: "La expansión de la ciencia moderna.",
+      D: "Las guerras de la Antigüedad."
+    },
+    correcta: "B",
+    justificacion: "La obra utiliza la vida de Lázaro para mostrar y criticar problemas de la sociedad de su época, especialmente la pobreza, la apariencia social y la hipocresía de algunos sectores."
+  },
+  {
+    id: 11,
+    tema: "Don Quijote",
+    pregunta: "¿Quién escribió El ingenioso hidalgo don Quijote de la Mancha?",
+    opciones: {
+      A: "Gustavo Adolfo Bécquer.",
+      B: "Miguel de Cervantes Saavedra.",
+      C: "Garcilaso de la Vega.",
+      D: "Fernando de Rojas."
+    },
+    correcta: "B",
+    justificacion: "Miguel de Cervantes Saavedra es el autor de Don Quijote de la Mancha, una de las obras fundamentales de la literatura española y universal."
+  },
+  {
+    id: 12,
+    tema: "Don Quijote",
+    pregunta: "¿Cuál es el nombre del protagonista antes de convertirse en Don Quijote?",
+    opciones: {
+      A: "Alonso Quijano.",
+      B: "Rodrigo Díaz.",
+      C: "Lázaro González.",
+      D: "Sancho Quijada."
+    },
+    correcta: "A",
+    justificacion: "El protagonista es presentado inicialmente como Alonso Quijano, un hidalgo que, después de leer numerosos libros de caballerías, decide convertirse en caballero andante bajo el nombre de Don Quijote."
+  },
+  {
+    id: 13,
+    tema: "Don Quijote",
+    pregunta: "¿Quién acompaña a Don Quijote como su escudero?",
+    opciones: {
+      A: "El bachiller Sansón Carrasco.",
+      B: "Cardenio.",
+      C: "Sancho Panza.",
+      D: "Ginés de Pasamonte."
+    },
+    correcta: "C",
+    justificacion: "Sancho Panza es el fiel escudero de Don Quijote. Representa una visión más práctica y realista frente a la imaginación y los ideales caballerescos de su amo."
+  },
+  {
+    id: 14,
+    tema: "Don Quijote",
+    pregunta: "¿Cómo interpreta Don Quijote los molinos de viento?",
+    opciones: {
+      A: "Como castillos abandonados.",
+      B: "Como gigantes contra los que debe luchar.",
+      C: "Como barcos enemigos.",
+      D: "Como soldados del rey."
+    },
+    correcta: "B",
+    justificacion: "Don Quijote transforma la realidad de acuerdo con su imaginación caballeresca y considera que los molinos son gigantes. Este episodio representa el contraste entre su idealismo y la realidad."
+  },
+  {
+    id: 15,
+    tema: "Don Quijote",
+    pregunta: "¿Quién es Dulcinea del Toboso?",
+    opciones: {
+      A: "La esposa de Sancho Panza.",
+      B: "Una princesa que gobierna La Mancha.",
+      C: "La dama idealizada por Don Quijote.",
+      D: "La sobrina de Don Quijote."
+    },
+    correcta: "C",
+    justificacion: "Dulcinea es la dama a quien Don Quijote dedica sus hazañas. Su nombre literario corresponde a Aldonza Lorenzo, una mujer que el protagonista idealiza como una noble dama."
+  },
+  {
+    id: 16,
+    tema: "Rima LIII",
+    pregunta: "¿Quién es el autor de la Rima LIII?",
+    opciones: {
+      A: "Miguel de Cervantes.",
+      B: "Gustavo Adolfo Bécquer.",
+      C: "Garcilaso de la Vega.",
+      D: "Jorge Manrique."
+    },
+    correcta: "B",
+    justificacion: "La Rima LIII pertenece a las Rimas de Gustavo Adolfo Bécquer, uno de los principales representantes de la poesía romántica española."
+  },
+  {
+    id: 17,
+    tema: "Rima LIII",
+    pregunta: "¿Cuál es el tema principal de la Rima LIII?",
+    opciones: {
+      A: "La guerra y el honor.",
+      B: "La imposibilidad de recuperar un amor perdido.",
+      C: "La vida de un héroe medieval.",
+      D: "La crítica de los libros de caballerías."
+    },
+    correcta: "B",
+    justificacion: "El poema expresa la tristeza del hablante lírico ante una relación amorosa que terminó. Aunque situaciones semejantes puedan repetirse, el poeta sostiene que ese amor particular no volverá."
+  },
+  {
+    id: 18,
+    tema: "Rima LIII",
+    pregunta: "En la Rima LIII, ¿qué elemento de la naturaleza se repite como símbolo?",
+    opciones: {
+      A: "Las golondrinas.",
+      B: "Los molinos de viento.",
+      C: "Los campos de batalla.",
+      D: "Las montañas nevadas."
+    },
+    correcta: "A",
+    justificacion: "Las golondrinas son uno de los elementos naturales más importantes del poema. Su regreso simboliza la repetición de ciertos acontecimientos, aunque el amor perdido no podrá regresar de la misma manera."
+  },
+  {
+    id: 19,
+    tema: "Rima LIII",
+    pregunta: "¿Qué sentimiento predomina en la Rima LIII?",
+    opciones: {
+      A: "Alegría y celebración.",
+      B: "Humor y sátira.",
+      C: "Melancolía y nostalgia amorosa.",
+      D: "Orgullo patriótico."
+    },
+    correcta: "C",
+    justificacion: "El poema transmite tristeza, nostalgia y dolor por un amor que ha terminado y que, según el hablante lírico, no volverá a repetirse de la misma manera."
+  },
+  {
+    id: 20,
+    tema: "Rima LIII",
+    pregunta: "¿Cuál de las siguientes características corresponde al Romanticismo presente en la Rima LIII?",
+    opciones: {
+      A: "Predominio de la razón sobre los sentimientos.",
+      B: "Expresión de sentimientos personales, subjetividad y valoración de la naturaleza.",
+      C: "Rechazo absoluto de las emociones.",
+      D: "Interés exclusivo por temas científicos."
+    },
+    correcta: "B",
+    justificacion: "El Romanticismo se caracteriza por la importancia de los sentimientos, la subjetividad, la libertad y la expresión individual. En la Rima LIII, Bécquer utiliza elementos de la naturaleza para expresar el dolor y la nostalgia amorosa."
+  }
+];
 
-  const letras = ["A","B","C","D"];
-  let indice = 0;
-  let aciertos = 0;
-  let respuestas = []; // {elegida, correcta}
-  let bloqueado = false;
+// ==================== ESTADO ====================
+let indiceActual = 0;
+let respuestas = {}; // { idPregunta: 'A' | 'B' | ... }
+let respondidas = 0;
+const totalPreguntas = preguntas.length;
 
-  const $inicio = document.getElementById('inicio');
-  const $juego = document.getElementById('juego');
-  const $resultado = document.getElementById('resultado');
+// ==================== ELEMENTOS DEL DOM ====================
+const pantallaInicio = document.getElementById('pantallaInicio');
+const pantallaExamen = document.getElementById('pantallaExamen');
+const pantallaFinal = document.getElementById('pantallaFinal');
 
-  const $avanceNum = document.getElementById('avanceNum');
-  const $avanceBarra = document.getElementById('avanceBarra');
-  const $preguntaNum = document.getElementById('preguntaNum');
-  const $preguntaTexto = document.getElementById('preguntaTexto');
-  const $opciones = document.getElementById('opciones');
-  const $justificacion = document.getElementById('justificacion');
-  const $btnSiguiente = document.getElementById('btnSiguiente');
+const btnComenzar = document.getElementById('btnComenzar');
+const numPregunta = document.getElementById('numPregunta');
+const totalPreguntasSpan = document.getElementById('totalPreguntas');
+const temaPregunta = document.getElementById('temaPregunta');
+const progreso = document.getElementById('progreso');
+const textoPregunta = document.getElementById('textoPregunta');
+const opcionesContainer = document.getElementById('opcionesContainer');
+const justificacion = document.getElementById('justificacion');
+const btnAnterior = document.getElementById('btnAnterior');
+const btnSiguiente = document.getElementById('btnSiguiente');
 
-  document.getElementById('btnEmpezar').addEventListener('click', () => {
-    $inicio.classList.add('oculto');
-    $juego.classList.remove('oculto');
-    renderPregunta();
+const puntajeFinal = document.getElementById('puntajeFinal');
+const porcentajeFinal = document.getElementById('porcentajeFinal');
+const mensajeFinal = document.getElementById('mensajeFinal');
+const resumenTemas = document.getElementById('resumenTemas');
+const btnRepasar = document.getElementById('btnRepasar');
+const btnVerErrores = document.getElementById('btnVerErrores');
+
+// ==================== FUNCIONES ====================
+function mostrarPantalla(pantalla) {
+  document.querySelectorAll('.pantalla').forEach(p => p.classList.remove('activa'));
+  pantalla.classList.add('activa');
+}
+
+function renderizarPregunta() {
+  const p = preguntas[indiceActual];
+
+  numPregunta.textContent = indiceActual + 1;
+  totalPreguntasSpan.textContent = totalPreguntas;
+  temaPregunta.textContent = p.tema;
+
+  // Barra de progreso
+  const porcentaje = ((indiceActual + 1) / totalPreguntas) * 100;
+  progreso.style.width = porcentaje + '%';
+
+  // Pregunta
+  textoPregunta.textContent = `${indiceActual + 1}. ${p.pregunta}`;
+
+  // Opciones
+  let htmlOpciones = '';
+  Object.entries(p.opciones).forEach(([letra, texto]) => {
+    htmlOpciones += `
+      <div class="opcion" data-letra="${letra}">
+        <strong>${letra})</strong> ${texto}
+      </div>
+    `;
   });
+  opcionesContainer.innerHTML = htmlOpciones;
 
-  document.getElementById('btnRepetir').addEventListener('click', reiniciar);
-
-  function reiniciar(){
-    indice = 0; aciertos = 0; respuestas = []; bloqueado = false;
-    $resultado.classList.add('oculto');
-    $juego.classList.remove('oculto');
-    renderPregunta();
+  // Si ya fue respondida, mostrar estado
+  const respuestaGuardada = respuestas[p.id];
+  if (respuestaGuardada) {
+    marcarRespuesta(p, respuestaGuardada);
+  } else {
+    justificacion.classList.remove('visible');
+    justificacion.innerHTML = '';
   }
 
-  function renderPregunta(){
-    bloqueado = false;
-    const q = preguntas[indice];
+  // Botones
+  btnAnterior.disabled = indiceActual === 0;
+  btnSiguiente.disabled = !respuestas[p.id];
 
-    $avanceNum.textContent = (indice+1) + ' / ' + preguntas.length;
-    $avanceBarra.style.width = (((indice) / preguntas.length) * 100) + '%';
-    $preguntaNum.textContent = 'Pregunta ' + (indice+1);
-    $preguntaTexto.textContent = q.p;
-
-    $opciones.innerHTML = '';
-    q.o.forEach((texto, i) => {
-      const btn = document.createElement('button');
-      btn.className = 'opcion';
-      btn.innerHTML = '<span class="letra">' + letras[i] + '</span><span>' + texto + '</span>';
-      btn.addEventListener('click', () => elegir(i, btn));
-      $opciones.appendChild(btn);
-    });
-
-    $justificacion.classList.remove('visible');
-    $justificacion.textContent = '';
-    $btnSiguiente.disabled = true;
-    $btnSiguiente.textContent = (indice === preguntas.length - 1) ? 'Ver resultado' : 'Siguiente';
+  // Cambiar texto del botón siguiente si es la última
+  if (indiceActual === totalPreguntas - 1) {
+    btnSiguiente.textContent = 'Finalizar ✓';
+  } else {
+    btnSiguiente.textContent = 'Siguiente →';
   }
+}
 
-  function elegir(i, btnEl){
-    if (bloqueado) return;
-    bloqueado = true;
-    const q = preguntas[indice];
-    const esCorrecta = (i === q.r);
-    if (esCorrecta) aciertos++;
-    respuestas.push({elegida: i, correcta: esCorrecta});
+function marcarRespuesta(p, letraElegida) {
+  const opciones = opcionesContainer.querySelectorAll('.opcion');
+  const esCorrecta = letraElegida === p.correcta;
 
-    const botones = $opciones.querySelectorAll('.opcion');
-    botones.forEach((b, idx) => {
-      b.disabled = true;
-      if (idx === q.r) b.classList.add('correcta');
-      else if (idx === i) b.classList.add('incorrecta');
-    });
-
-    $justificacion.innerHTML = '<b>' + (esCorrecta ? 'Correcto. ' : 'Incorrecto. ') + '</b>' + q.j;
-    $justificacion.classList.add('visible');
-    $btnSiguiente.disabled = false;
-  }
-
-  $btnSiguiente.addEventListener('click', () => {
-    if (indice < preguntas.length - 1){
-      indice++;
-      renderPregunta();
-    } else {
-      mostrarResultado();
+  opciones.forEach(op => {
+    op.classList.add('bloqueada');
+    if (op.dataset.letra === p.correcta) {
+      op.classList.add('correcta');
+    } else if (op.dataset.letra === letraElegida && !esCorrecta) {
+      op.classList.add('incorrecta');
+    }
+    if (op.dataset.letra === letraElegida) {
+      op.classList.add('seleccionada');
     }
   });
 
-  function mostrarResultado(){
-    $avanceBarra.style.width = '100%';
-    $juego.classList.add('oculto');
-    $resultado.classList.remove('oculto');
+  justificacion.innerHTML = `
+    <strong>${esCorrecta ? '✅ ¡Correcto!' : '❌ Incorrecto'}</strong><br>
+    La respuesta correcta es <strong>${p.correcta}) ${p.opciones[p.correcta]}</strong><br><br>
+    <em>${p.justificacion}</em>
+  `;
+  justificacion.classList.add('visible');
+}
 
-    document.getElementById('notaNum').textContent = aciertos + '/' + preguntas.length;
+function seleccionarOpcion(letra) {
+  const p = preguntas[indiceActual];
 
-    const pct = aciertos / preguntas.length;
-    let titulo, veredicto;
-    if (pct === 1){ titulo = 'Excelente'; veredicto = 'Dominas la reproducción celular, vegetativa y la reproducción humana.'; }
-    else if (pct >= 0.8){ titulo = 'Muy bien'; veredicto = 'Un manejo sólido del tema, con algún detalle por afinar.'; }
-    else if (pct >= 0.6){ titulo = 'Aprobado'; veredicto = 'Base correcta; conviene repasar las preguntas falladas.'; }
-    else { titulo = 'A repasar'; veredicto = 'Vale la pena volver sobre los conceptos antes de repetir el examen.'; }
+  if (respuestas[p.id]) return; // ya respondida
 
-    document.getElementById('notaTitulo').textContent = titulo;
-    document.getElementById('notaVeredicto').textContent = veredicto;
+  respuestas[p.id] = letra;
+  respondidas++;
 
-    const $repaso = document.getElementById('repaso');
-    $repaso.innerHTML = '';
-    preguntas.forEach((q, idx) => {
-      const r = respuestas[idx];
-      const item = document.createElement('div');
-      item.className = 'repaso-item';
-      const marcaClase = r.correcta ? 'ok' : 'no';
-      const marcaTexto = r.correcta ? '✓' : '✕';
-      item.innerHTML =
-        '<span class="repaso-marca ' + marcaClase + '">' + marcaTexto + '</span>' +
-        '<span class="repaso-texto"><b>' + (idx+1) + '. ' + q.p + '</b>Respuesta correcta: ' + letras[q.r] + ') ' + q.o[q.r] + '</span>';
-      $repaso.appendChild(item);
-    });
+  marcarRespuesta(p, letra);
+
+  btnSiguiente.disabled = false;
+}
+
+function irSiguiente() {
+  if (indiceActual < totalPreguntas - 1) {
+    indiceActual++;
+    renderizarPregunta();
+  } else {
+    finalizarExamen();
   }
-})();
+}
+
+function irAnterior() {
+  if (indiceActual > 0) {
+    indiceActual--;
+    renderizarPregunta();
+  }
+}
+
+function finalizarExamen() {
+  let correctas = 0;
+  const porTema = {};
+
+  preguntas.forEach(p => {
+    if (!porTema[p.tema]) porTema[p.tema] = { correctas: 0, total: 0 };
+    porTema[p.tema].total++;
+    if (respuestas[p.id] === p.correcta) {
+      correctas++;
+      porTema[p.tema].correctas++;
+    }
+  });
+
+  const porcentaje = Math.round((correctas / totalPreguntas) * 100);
+
+  puntajeFinal.textContent = `${correctas} / ${totalPreguntas}`;
+  porcentajeFinal.textContent = `${porcentaje}%`;
+
+  // Mensaje personalizado
+  let mensaje = '';
+  if (porcentaje === 100) {
+    mensaje = '¡Perfecto! Eres una genia de la literatura.  ojitos  eres la más inteligente';
+  } else if (porcentaje >= 80) {
+    mensaje = '¡Excelente! Sabes muchísimo. Estoy muy orgulloso';
+  } else if (porcentaje >= 60) {
+    mensaje = '¡Muy bien! Tienes buenos conocimientos. Un repasito más y perfecto';
+  } else if (porcentaje >= 40) {
+    mensaje = 'No está mal, ojitos. Repasemos más';
+  } else {
+    mensaje = 'Tranquila, ojitos. Lo importante es repasar. Te acompaño a estudiar';
+  }
+  mensajeFinal.textContent = mensaje;
+
+  // Resumen por tema
+  let resumenHTML = '<h3>Resumen por tema</h3>';
+  Object.entries(porTema).forEach(([tema, datos]) => {
+    const pct = Math.round((datos.correctas / datos.total) * 100);
+    resumenHTML += `
+      <div class="tema-fila">
+        <span>${tema}</span>
+        <span><strong>${datos.correctas}/${datos.total}</strong> (${pct}%)</span>
+      </div>
+    `;
+  });
+  resumenTemas.innerHTML = resumenHTML;
+
+  mostrarPantalla(pantallaFinal);
+}
+
+function reiniciarExamen() {
+  indiceActual = 0;
+  respuestas = {};
+  respondidas = 0;
+  progreso.style.width = '5%';
+  mostrarPantalla(pantallaInicio);
+}
+
+// ==================== EVENTOS ====================
+btnComenzar.addEventListener('click', () => {
+  indiceActual = 0;
+  respuestas = {};
+  respondidas = 0;
+  mostrarPantalla(pantallaExamen);
+  renderizarPregunta();
+});
+
+opcionesContainer.addEventListener('click', (e) => {
+  const opcion = e.target.closest('.opcion');
+  if (!opcion || opcion.classList.contains('bloqueada')) return;
+  seleccionarOpcion(opcion.dataset.letra);
+});
+
+btnSiguiente.addEventListener('click', irSiguiente);
+btnAnterior.addEventListener('click', irAnterior);
+
+btnRepasar.addEventListener('click', reiniciarExamen);
+
+btnVerErrores.addEventListener('click', () => {
+  const errores = preguntas.filter(p => respuestas[p.id] !== p.correcta);
+  if (errores.length === 0) {
+    alert('¡No tienes errores! Eres increíble');
+    return;
+  }
+
+  // Mostrar solo errores en una alerta simple con formato
+  let texto = '❌ Preguntas que fallaste:\n\n';
+  errores.forEach(p => {
+    texto += `• ${p.pregunta}\n  Respuesta correcta: ${p.correcta}) ${p.opciones[p.correcta]}\n\n`;
+  });
+  alert(texto);
+});
