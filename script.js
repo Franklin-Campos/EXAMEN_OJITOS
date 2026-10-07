@@ -2,269 +2,269 @@
 const preguntas = [
   {
     id: 1,
-    tema: "Cantar de gesta",
-    pregunta: "¿Qué es un cantar de gesta?",
+    tema: "Humanismo",
+    pregunta: "¿Qué fue el Humanismo durante la Edad Moderna?",
     opciones: {
-      A: "Una composición lírica dedicada principalmente al amor.",
-      B: "Un relato épico en verso que narra las hazañas de un héroe.",
-      C: "Una obra teatral de carácter religioso.",
-      D: "Una novela breve de carácter humorístico."
+      A: "Un movimiento que rechazó completamente la cultura clásica.",
+      B: "Un movimiento intelectual que colocó al ser humano y la razón en un lugar central.",
+      C: "Un movimiento exclusivamente religioso.",
+      D: "Una corriente política que defendía las monarquías absolutas."
     },
     correcta: "B",
-    justificacion: "Los cantares de gesta son poemas épicos medievales que narran las hazañas, aventuras y valores de héroes, generalmente relacionados con acontecimientos históricos o legendarios."
+    justificacion: "El Humanismo fue un movimiento intelectual que recuperó el estudio de la cultura clásica y destacó la capacidad, dignidad y razón del ser humano."
   },
   {
     id: 2,
-    tema: "Mío Cid",
-    pregunta: "¿Quién es el protagonista principal de El cantar de Mío Cid?",
+    tema: "Renacimiento",
+    pregunta: "¿Cuál fue una característica importante del Renacimiento?",
     opciones: {
-      A: "Don Quijote de la Mancha.",
-      B: "Roldán.",
-      C: "Rodrigo Díaz de Vivar.",
-      D: "Alfonso X."
+      A: "El rechazo de la cultura grecorromana.",
+      B: "El interés por la cultura clásica, las artes y el conocimiento científico.",
+      C: "La desaparición de las actividades comerciales.",
+      D: "El aislamiento cultural de Europa."
     },
-    correcta: "C",
-    justificacion: "El protagonista es Rodrigo Díaz de Vivar, conocido como el Cid Campeador, personaje histórico que se convirtió en una figura legendaria de la literatura medieval española."
+    correcta: "B",
+    justificacion: "El Renacimiento recuperó los modelos culturales de Grecia y Roma y promovió importantes avances en las artes, las ciencias y el pensamiento."
   },
   {
     id: 3,
-    tema: "Mío Cid",
-    pregunta: "¿Cuál es el tema central de El cantar de Mío Cid?",
+    tema: "Renacimiento",
+    pregunta: "¿En qué región europea tuvo su origen el Renacimiento?",
     opciones: {
-      A: "La búsqueda de un amor imposible.",
-      B: "La recuperación de la honra y el reconocimiento social del héroe.",
-      C: "La crítica de la sociedad renacentista.",
-      D: "La vida de los campesinos medievales."
+      A: "Italia.",
+      B: "Inglaterra.",
+      C: "Rusia.",
+      D: "Portugal."
     },
-    correcta: "B",
-    justificacion: "El Cid pierde su honra al ser desterrado injustamente y, mediante sus acciones y victorias, consigue recuperar su prestigio y posición ante el rey y la sociedad."
+    correcta: "A",
+    justificacion: "El Renacimiento surgió principalmente en las ciudades italianas, como Florencia, Venecia y Roma, y posteriormente se difundió por Europa."
   },
   {
     id: 4,
-    tema: "Mío Cid",
-    pregunta: "¿Por qué es desterrado el Cid al inicio de la obra?",
+    tema: "Descubrimientos",
+    pregunta: "¿Cuál fue una de las principales causas de los descubrimientos geográficos de los siglos XV y XVI?",
     opciones: {
-      A: "Porque abandona voluntariamente Castilla.",
-      B: "Porque es acusado de traición y pierde el favor del rey Alfonso VI.",
-      C: "Porque se niega a luchar contra los musulmanes.",
-      D: "Porque desobedece a sus vasallos."
+      A: "La búsqueda de nuevas rutas comerciales hacia Asia.",
+      B: "La desaparición del comercio europeo.",
+      C: "El deseo de abandonar las actividades marítimas.",
+      D: "La prohibición del comercio de especias."
     },
-    correcta: "B",
-    justificacion: "El Cid es acusado injustamente de apropiarse de parte de los tributos enviados al rey. Como consecuencia, Alfonso VI ordena su destierro."
+    correcta: "A",
+    justificacion: "Los europeos buscaban nuevas rutas hacia Asia para obtener productos como especias y metales preciosos, evitando las rutas comerciales tradicionales controladas por otros pueblos."
   },
   {
     id: 5,
-    tema: "Mío Cid",
-    pregunta: "¿Cuál de los siguientes personajes representa una importante relación familiar del Cid?",
+    tema: "Descubrimientos",
+    pregunta: "¿Quién llegó a América en 1492 bajo el patrocinio de los Reyes Católicos?",
     opciones: {
-      A: "Dulcinea del Toboso.",
-      B: "Doña Elvira y Doña Sol.",
-      C: "Doña Inés.",
-      D: "Marcela."
+      A: "Vasco da Gama.",
+      B: "Fernando de Magallanes.",
+      C: "Cristóbal Colón.",
+      D: "Américo Vespucio."
     },
-    correcta: "B",
-    justificacion: "Doña Elvira y Doña Sol son las hijas del Cid. Su matrimonio con los infantes de Carrión constituye una parte importante de la trama y posteriormente provoca un conflicto relacionado con la honra familiar."
+    correcta: "C",
+    justificacion: "Cristóbal Colón llegó a América el 12 de octubre de 1492 durante una expedición financiada por los Reyes Católicos de España."
   },
   {
     id: 6,
-    tema: "Lazarillo de Tormes",
-    pregunta: "¿A qué género pertenece principalmente El Lazarillo de Tormes?",
+    tema: "Reforma Protestante",
+    pregunta: "¿Qué fue la Reforma Protestante?",
     opciones: {
-      A: "Novela picaresca.",
-      B: "Novela caballeresca.",
-      C: "Novela pastoril.",
-      D: "Novela histórica."
+      A: "Un movimiento que buscó reformar aspectos de la Iglesia católica y dio origen a nuevas iglesias cristianas.",
+      B: "Una guerra entre España y Portugal.",
+      C: "Un movimiento artístico del Renacimiento.",
+      D: "Una revolución política contra las monarquías."
     },
     correcta: "A",
-    justificacion: "El Lazarillo de Tormes es considerada una de las primeras grandes obras de la novela picaresca. Presenta la vida de un personaje humilde que debe utilizar su ingenio para sobrevivir."
+    justificacion: "La Reforma Protestante comenzó en el siglo XVI como una crítica a determinadas prácticas y doctrinas de la Iglesia católica, dando origen a diversas iglesias protestantes."
   },
   {
     id: 7,
-    tema: "Lazarillo de Tormes",
-    pregunta: "¿Quién narra la historia de El Lazarillo de Tormes?",
+    tema: "Reforma Protestante",
+    pregunta: "¿Quién inició la Reforma Protestante en Alemania?",
     opciones: {
-      A: "El ciego.",
-      B: "El escudero.",
-      C: "Lázaro de Tormes.",
-      D: "El arcipreste de San Salvador."
+      A: "Juan Calvino.",
+      B: "Martín Lutero.",
+      C: "Enrique VIII.",
+      D: "Ignacio de Loyola."
     },
-    correcta: "C",
-    justificacion: "La obra está narrada en primera persona por Lázaro, quien cuenta su vida desde su infancia y las experiencias que tuvo al servicio de diferentes amos."
+    correcta: "B",
+    justificacion: "Martín Lutero cuestionó diversas prácticas de la Iglesia católica y en 1517 difundió sus famosas 95 tesis, hecho considerado fundamental para el inicio de la Reforma."
   },
   {
     id: 8,
-    tema: "Lazarillo de Tormes",
-    pregunta: "¿Cuál es una característica fundamental del protagonista de El Lazarillo de Tormes?",
+    tema: "Reforma Protestante",
+    pregunta: "¿Qué documento presentó Martín Lutero en 1517?",
     opciones: {
-      A: "Es un caballero de origen noble.",
-      B: "Es un personaje humilde que utiliza su ingenio para sobrevivir.",
-      C: "Es un héroe que busca conquistar territorios.",
-      D: "Es un príncipe que busca recuperar su reino."
+      A: "Las 95 tesis.",
+      B: "El Edicto de Nantes.",
+      C: "La Declaración de Independencia.",
+      D: "La Carta Magna."
     },
-    correcta: "B",
-    justificacion: "Lázaro pertenece a un ambiente social humilde y enfrenta el hambre y la pobreza. Para sobrevivir, desarrolla astucia e ingenio, especialmente frente a sus diferentes amos."
+    correcta: "A",
+    justificacion: "Las 95 tesis criticaban especialmente la venta de indulgencias y planteaban cuestiones relacionadas con la doctrina y las prácticas de la Iglesia."
   },
   {
     id: 9,
-    tema: "Lazarillo de Tormes",
-    pregunta: "¿Cuál de los siguientes personajes es uno de los primeros amos de Lázaro?",
+    tema: "Reforma Protestante",
+    pregunta: "¿Qué reformador estuvo relacionado con el desarrollo del calvinismo?",
     opciones: {
-      A: "El ciego.",
-      B: "El Cid.",
-      C: "Sancho Panza.",
-      D: "El bachiller Sansón Carrasco."
+      A: "Juan Calvino.",
+      B: "Martín Lutero.",
+      C: "Enrique VIII.",
+      D: "Carlos V."
     },
     correcta: "A",
-    justificacion: "El ciego es el primer amo importante de Lázaro. Durante su servicio, el muchacho aprende mediante experiencias difíciles a ser más astuto y desconfiado."
+    justificacion: "Juan Calvino fue uno de los principales líderes de la Reforma Protestante y desarrolló una doctrina cristiana que tuvo gran influencia en Suiza y posteriormente en otras regiones de Europa."
   },
   {
     id: 10,
-    tema: "Lazarillo de Tormes",
-    pregunta: "¿Qué aspecto de la sociedad critica especialmente El Lazarillo de Tormes?",
+    tema: "Reforma Protestante",
+    pregunta: "¿Por qué surgió la Iglesia Anglicana?",
     opciones: {
-      A: "La vida de los héroes mitológicos.",
-      B: "La corrupción, la hipocresía y las desigualdades sociales.",
-      C: "La expansión de la ciencia moderna.",
-      D: "Las guerras de la Antigüedad."
+      A: "Por la decisión de Enrique VIII de separarse de la autoridad del papa.",
+      B: "Por la llegada de Cristóbal Colón a América.",
+      C: "Por las ideas de Juan Calvino en Francia.",
+      D: "Por la Revolución Francesa."
     },
-    correcta: "B",
-    justificacion: "La obra utiliza la vida de Lázaro para mostrar y criticar problemas de la sociedad de su época, especialmente la pobreza, la apariencia social y la hipocresía de algunos sectores."
+    correcta: "A",
+    justificacion: "Enrique VIII rompió con la autoridad papal y estableció la Iglesia de Inglaterra, proceso que dio origen a la Iglesia Anglicana."
   },
   {
     id: 11,
-    tema: "Don Quijote",
-    pregunta: "¿Quién escribió El ingenioso hidalgo don Quijote de la Mancha?",
+    tema: "Contrarreforma",
+    pregunta: "¿Qué fue la Contrarreforma Católica?",
     opciones: {
-      A: "Gustavo Adolfo Bécquer.",
-      B: "Miguel de Cervantes Saavedra.",
-      C: "Garcilaso de la Vega.",
-      D: "Fernando de Rojas."
+      A: "La respuesta de la Iglesia católica frente a la Reforma Protestante.",
+      B: "Una revolución contra los reyes europeos.",
+      C: "Una corriente artística exclusivamente italiana.",
+      D: "Un movimiento para eliminar las órdenes religiosas."
     },
-    correcta: "B",
-    justificacion: "Miguel de Cervantes Saavedra es el autor de Don Quijote de la Mancha, una de las obras fundamentales de la literatura española y universal."
+    correcta: "A",
+    justificacion: "La Contrarreforma fue el proceso de renovación interna y defensa doctrinal desarrollado por la Iglesia católica frente al avance de las ideas protestantes."
   },
   {
     id: 12,
-    tema: "Don Quijote",
-    pregunta: "¿Cuál es el nombre del protagonista antes de convertirse en Don Quijote?",
+    tema: "Contrarreforma",
+    pregunta: "¿Qué importante acontecimiento estuvo relacionado con la Contrarreforma?",
     opciones: {
-      A: "Alonso Quijano.",
-      B: "Rodrigo Díaz.",
-      C: "Lázaro González.",
-      D: "Sancho Quijada."
+      A: "El Concilio de Trento.",
+      B: "La llegada de Colón a América.",
+      C: "La independencia de las Trece Colonias.",
+      D: "La Revolución Industrial."
     },
     correcta: "A",
-    justificacion: "El protagonista es presentado inicialmente como Alonso Quijano, un hidalgo que, después de leer numerosos libros de caballerías, decide convertirse en caballero andante bajo el nombre de Don Quijote."
+    justificacion: "El Concilio de Trento (1545–1563) reafirmó doctrinas católicas y estableció medidas de reforma y disciplina dentro de la Iglesia."
   },
   {
     id: 13,
-    tema: "Don Quijote",
-    pregunta: "¿Quién acompaña a Don Quijote como su escudero?",
+    tema: "Monarquía absoluta",
+    pregunta: "¿Qué característica tuvo la monarquía absoluta durante la Edad Moderna?",
     opciones: {
-      A: "El bachiller Sansón Carrasco.",
-      B: "Cardenio.",
-      C: "Sancho Panza.",
-      D: "Ginés de Pasamonte."
+      A: "El poder político estaba concentrado principalmente en el monarca.",
+      B: "El pueblo elegía directamente al rey.",
+      C: "No existían ejércitos permanentes.",
+      D: "El rey no tenía ninguna autoridad política."
     },
-    correcta: "C",
-    justificacion: "Sancho Panza es el fiel escudero de Don Quijote. Representa una visión más práctica y realista frente a la imaginación y los ideales caballerescos de su amo."
+    correcta: "A",
+    justificacion: "En las monarquías absolutas, el rey concentraba amplias funciones políticas y administrativas y ejercía un fuerte control sobre el Estado."
   },
   {
     id: 14,
-    tema: "Don Quijote",
-    pregunta: "¿Cómo interpreta Don Quijote los molinos de viento?",
+    tema: "Monarquía absoluta",
+    pregunta: "¿Cuál de los siguientes monarcas es considerado uno de los principales representantes del absolutismo?",
     opciones: {
-      A: "Como castillos abandonados.",
-      B: "Como gigantes contra los que debe luchar.",
-      C: "Como barcos enemigos.",
-      D: "Como soldados del rey."
+      A: "Luis XIV de Francia.",
+      B: "George Washington.",
+      C: "Cristóbal Colón.",
+      D: "Martín Lutero."
     },
-    correcta: "B",
-    justificacion: "Don Quijote transforma la realidad de acuerdo con su imaginación caballeresca y considera que los molinos son gigantes. Este episodio representa el contraste entre su idealismo y la realidad."
+    correcta: "A",
+    justificacion: "Luis XIV es uno de los principales ejemplos del absolutismo monárquico. Se le atribuye la conocida expresión “El Estado soy yo”, aunque su autenticidad histórica es discutida."
   },
   {
     id: 15,
-    tema: "Don Quijote",
-    pregunta: "¿Quién es Dulcinea del Toboso?",
+    tema: "Ilustración",
+    pregunta: "¿Qué fue la Ilustración?",
     opciones: {
-      A: "La esposa de Sancho Panza.",
-      B: "Una princesa que gobierna La Mancha.",
-      C: "La dama idealizada por Don Quijote.",
-      D: "La sobrina de Don Quijote."
+      A: "Un movimiento intelectual que defendió el uso de la razón y cuestionó estructuras tradicionales.",
+      B: "Un movimiento exclusivamente religioso.",
+      C: "Una guerra entre Francia e Inglaterra.",
+      D: "Una corriente artística medieval."
     },
-    correcta: "C",
-    justificacion: "Dulcinea es la dama a quien Don Quijote dedica sus hazañas. Su nombre literario corresponde a Aldonza Lorenzo, una mujer que el protagonista idealiza como una noble dama."
+    correcta: "A",
+    justificacion: "La Ilustración del siglo XVIII promovió la razón, la libertad, el conocimiento, la educación y la crítica de las instituciones tradicionales."
   },
   {
     id: 16,
-    tema: "Rima LIII",
-    pregunta: "¿Quién es el autor de la Rima LIII?",
+    tema: "Ilustración",
+    pregunta: "¿Cuál de los siguientes pensadores fue representante de la Ilustración?",
     opciones: {
-      A: "Miguel de Cervantes.",
-      B: "Gustavo Adolfo Bécquer.",
-      C: "Garcilaso de la Vega.",
-      D: "Jorge Manrique."
+      A: "Voltaire.",
+      B: "Miguel Ángel.",
+      C: "Hernán Cortés.",
+      D: "Rodrigo Díaz de Vivar."
     },
-    correcta: "B",
-    justificacion: "La Rima LIII pertenece a las Rimas de Gustavo Adolfo Bécquer, uno de los principales representantes de la poesía romántica española."
+    correcta: "A",
+    justificacion: "Voltaire fue uno de los principales pensadores ilustrados y defendió ideas relacionadas con la libertad de pensamiento y la tolerancia."
   },
   {
     id: 17,
-    tema: "Rima LIII",
-    pregunta: "¿Cuál es el tema principal de la Rima LIII?",
+    tema: "Despotismo ilustrado",
+    pregunta: "¿Qué se entiende por despotismo ilustrado?",
     opciones: {
-      A: "La guerra y el honor.",
-      B: "La imposibilidad de recuperar un amor perdido.",
-      C: "La vida de un héroe medieval.",
-      D: "La crítica de los libros de caballerías."
+      A: "Una forma de gobierno que combinó el poder absoluto de los monarcas con algunas ideas de la Ilustración.",
+      B: "Un sistema democrático basado en el sufragio universal.",
+      C: "Un gobierno dirigido exclusivamente por la Iglesia.",
+      D: "La eliminación de todas las monarquías europeas."
     },
-    correcta: "B",
-    justificacion: "El poema expresa la tristeza del hablante lírico ante una relación amorosa que terminó. Aunque situaciones semejantes puedan repetirse, el poeta sostiene que ese amor particular no volverá."
+    correcta: "A",
+    justificacion: "Los monarcas ilustrados impulsaron reformas educativas, económicas y administrativas, pero mantuvieron la concentración del poder en sus manos."
   },
   {
     id: 18,
-    tema: "Rima LIII",
-    pregunta: "En la Rima LIII, ¿qué elemento de la naturaleza se repite como símbolo?",
+    tema: "Independencia EE.UU.",
+    pregunta: "¿Qué país dominaba las Trece Colonias antes de su independencia?",
     opciones: {
-      A: "Las golondrinas.",
-      B: "Los molinos de viento.",
-      C: "Los campos de batalla.",
-      D: "Las montañas nevadas."
+      A: "Francia.",
+      B: "España.",
+      C: "Gran Bretaña.",
+      D: "Portugal."
     },
-    correcta: "A",
-    justificacion: "Las golondrinas son uno de los elementos naturales más importantes del poema. Su regreso simboliza la repetición de ciertos acontecimientos, aunque el amor perdido no podrá regresar de la misma manera."
+    correcta: "C",
+    justificacion: "Las Trece Colonias de América del Norte estaban bajo dominio británico antes de iniciar su proceso de independencia."
   },
   {
     id: 19,
-    tema: "Rima LIII",
-    pregunta: "¿Qué sentimiento predomina en la Rima LIII?",
+    tema: "Independencia EE.UU.",
+    pregunta: "¿En qué año se proclamó la Declaración de Independencia de los Estados Unidos?",
     opciones: {
-      A: "Alegría y celebración.",
-      B: "Humor y sátira.",
-      C: "Melancolía y nostalgia amorosa.",
-      D: "Orgullo patriótico."
+      A: "1492.",
+      B: "1688.",
+      C: "1776.",
+      D: "1789."
     },
     correcta: "C",
-    justificacion: "El poema transmite tristeza, nostalgia y dolor por un amor que ha terminado y que, según el hablante lírico, no volverá a repetirse de la misma manera."
+    justificacion: "La Declaración de Independencia fue aprobada el 4 de julio de 1776, proclamando la separación de las Trece Colonias respecto de Gran Bretaña."
   },
   {
     id: 20,
-    tema: "Rima LIII",
-    pregunta: "¿Cuál de las siguientes características corresponde al Romanticismo presente en la Rima LIII?",
+    tema: "Independencia EE.UU.",
+    pregunta: "¿Quién fue uno de los principales líderes de la independencia de las Trece Colonias y posteriormente primer presidente de Estados Unidos?",
     opciones: {
-      A: "Predominio de la razón sobre los sentimientos.",
-      B: "Expresión de sentimientos personales, subjetividad y valoración de la naturaleza.",
-      C: "Rechazo absoluto de las emociones.",
-      D: "Interés exclusivo por temas científicos."
+      A: "George Washington.",
+      B: "Luis XIV.",
+      C: "Juan Calvino.",
+      D: "Napoleón Bonaparte."
     },
-    correcta: "B",
-    justificacion: "El Romanticismo se caracteriza por la importancia de los sentimientos, la subjetividad, la libertad y la expresión individual. En la Rima LIII, Bécquer utiliza elementos de la naturaleza para expresar el dolor y la nostalgia amorosa."
+    correcta: "A",
+    justificacion: "George Washington dirigió al ejército continental durante la Guerra de Independencia y posteriormente se convirtió en el primer presidente de los Estados Unidos."
   }
 ];
 
 // ==================== ESTADO ====================
 let indiceActual = 0;
-let respuestas = {}; // { idPregunta: 'A' | 'B' | ... }
+let respuestas = {};
 let respondidas = 0;
 const totalPreguntas = preguntas.length;
 
@@ -304,14 +304,11 @@ function renderizarPregunta() {
   totalPreguntasSpan.textContent = totalPreguntas;
   temaPregunta.textContent = p.tema;
 
-  // Barra de progreso
   const porcentaje = ((indiceActual + 1) / totalPreguntas) * 100;
   progreso.style.width = porcentaje + '%';
 
-  // Pregunta
   textoPregunta.textContent = `${indiceActual + 1}. ${p.pregunta}`;
 
-  // Opciones
   let htmlOpciones = '';
   Object.entries(p.opciones).forEach(([letra, texto]) => {
     htmlOpciones += `
@@ -322,7 +319,6 @@ function renderizarPregunta() {
   });
   opcionesContainer.innerHTML = htmlOpciones;
 
-  // Si ya fue respondida, mostrar estado
   const respuestaGuardada = respuestas[p.id];
   if (respuestaGuardada) {
     marcarRespuesta(p, respuestaGuardada);
@@ -331,11 +327,9 @@ function renderizarPregunta() {
     justificacion.innerHTML = '';
   }
 
-  // Botones
   btnAnterior.disabled = indiceActual === 0;
   btnSiguiente.disabled = !respuestas[p.id];
 
-  // Cambiar texto del botón siguiente si es la última
   if (indiceActual === totalPreguntas - 1) {
     btnSiguiente.textContent = 'Finalizar ✓';
   } else {
@@ -369,14 +363,12 @@ function marcarRespuesta(p, letraElegida) {
 
 function seleccionarOpcion(letra) {
   const p = preguntas[indiceActual];
-
-  if (respuestas[p.id]) return; // ya respondida
+  if (respuestas[p.id]) return;
 
   respuestas[p.id] = letra;
   respondidas++;
 
   marcarRespuesta(p, letra);
-
   btnSiguiente.disabled = false;
 }
 
@@ -414,22 +406,20 @@ function finalizarExamen() {
   puntajeFinal.textContent = `${correctas} / ${totalPreguntas}`;
   porcentajeFinal.textContent = `${porcentaje}%`;
 
-  // Mensaje personalizado
   let mensaje = '';
   if (porcentaje === 100) {
-    mensaje = '¡Perfecto! Eres una genia de la literatura.  ojitos  eres la más inteligente';
+    mensaje = '¡Perfecto! Eres una genia ojitos 💝.';
   } else if (porcentaje >= 80) {
-    mensaje = '¡Excelente! Sabes muchísimo. Estoy muy orgulloso';
+    mensaje = '¡Excelente! Sabes muchísimo ojitos 💝';
   } else if (porcentaje >= 60) {
-    mensaje = '¡Muy bien! Tienes buenos conocimientos. Un repasito más y perfecto';
+    mensaje = '¡Muy bien! Tienes buenos conocimientos. Un repasito más y perfecto ojitos 💝';
   } else if (porcentaje >= 40) {
-    mensaje = 'No está mal, ojitos. Repasemos más';
+    mensaje = 'No está mal, ojitos . Repasemos juntos antes del domingo. 💘';
   } else {
-    mensaje = 'Tranquila, ojitos. Lo importante es repasar. Te acompaño a estudiar';
+    mensaje = 'Tranquila, ojitos . Lo importante es repasar. Te acompaño a estudiar. 💝';
   }
   mensajeFinal.textContent = mensaje;
 
-  // Resumen por tema
   let resumenHTML = '<h3>Resumen por tema</h3>';
   Object.entries(porTema).forEach(([tema, datos]) => {
     const pct = Math.round((datos.correctas / datos.total) * 100);
@@ -476,11 +466,10 @@ btnRepasar.addEventListener('click', reiniciarExamen);
 btnVerErrores.addEventListener('click', () => {
   const errores = preguntas.filter(p => respuestas[p.id] !== p.correcta);
   if (errores.length === 0) {
-    alert('¡No tienes errores! Eres increíble');
+    alert('¡No tienes errores! Eres increíble, ojitos. 💕');
     return;
   }
 
-  // Mostrar solo errores en una alerta simple con formato
   let texto = '❌ Preguntas que fallaste:\n\n';
   errores.forEach(p => {
     texto += `• ${p.pregunta}\n  Respuesta correcta: ${p.correcta}) ${p.opciones[p.correcta]}\n\n`;
