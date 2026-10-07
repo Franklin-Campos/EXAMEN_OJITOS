@@ -408,11 +408,11 @@ function finalizarExamen() {
 
   let mensaje = '';
   if (porcentaje === 100) {
-    mensaje = '¡Perfecto! Eres una genia ojitos 💝.';
+    mensaje = '¡Perfecto! Eres una genia ojitos .';
   } else if (porcentaje >= 80) {
-    mensaje = '¡Excelente! Sabes muchísimo ojitos 💝';
+    mensaje = '¡Excelente! Sabes muchísimo ojitos ';
   } else if (porcentaje >= 60) {
-    mensaje = '¡Muy bien! Tienes buenos conocimientos. Un repasito más y perfecto ojitos 💝';
+    mensaje = '¡Muy bien! Tienes buenos conocimientos. Un repasito más y perfecto ojitos ';
   } else if (porcentaje >= 40) {
     mensaje = 'No está mal, ojitos . Repasemos juntos antes del domingo. 💘';
   } else {
