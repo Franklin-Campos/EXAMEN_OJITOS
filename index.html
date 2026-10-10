@@ -1,80 +1,83 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Examen de Historia Universal ❤️</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen de Repaso Especial 💖</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-<div class="contenedor">
-
-  <!-- PANTALLA DE BIENVENIDA -->
-  <section id="pantallaInicio" class="pantalla activa">
-    <div class="foto-ojitos">
-      <!-- ⬇️ REEMPLAZA "foto.jpg" POR TU FOTO ⬇️ -->
-      <img src="foto.jpg" alt="Ojitos de cariño">
-      <div class="nombre-ojitos">Repasa más</div>
+    <!-- Fondo animado -->
+    <div class="bg-gradient"></div>
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
     </div>
 
-    <h1>Examen de Historia Universal</h1>
-    <p class="subtitulo">Repaso para el domingo 📚</p>
+    <main class="app-container">
+        
+        <!-- PANTALLA DE INICIO -->
+        <section id="start-screen" class="screen active">
+            <div class="glass-card start-card">
+                <div class="photo-wrapper">
+                    <div class="photo-ring"></div>
+                    <!-- REEMPLAZA foto.jpg por tu imagen -->
+                    <img src="foto.jpg" alt="Para ti" class="profile-photo" id="profile-photo">
+                    <span class="heart-badge">🖤</span>
+                </div>
+                <h1>¡Hola, ojitos!</h1>
+                <p class="subtitle">Preparé este repaso con mucho cariño para ti. Sabes que puedes con esto y más. ¡Confío en ti!</p>
+                <div class="info-pills">
+                    <span class="pill">📝 50 preguntas</span>
+                    <span class="pill">⭐ Nota 1-20</span>
+                    <span class="pill">⏱️ Sin límite</span>
+                </div>
+                <button id="start-btn" class="btn-main">Comenzar Examen ✨</button>
+            </div>
+        </section>
 
-    <div class="info-inicio">
-      <p>📝 <strong>20 preguntas</strong> de opción múltiple</p>
-      <p>🎯 Temas: Humanismo, Reforma, Ilustración e Independencia</p>
-      <p>💡 Verás la justificación después de cada respuesta</p>
-    </div>
+        <!-- PANTALLA DE EXAMEN -->
+        <section id="quiz-screen" class="screen">
+            <div class="glass-card quiz-card">
+                <header class="quiz-header">
+                    <div class="progress-info">
+                        <span id="question-counter">1 / 50</span>
+                        <span id="score-live">⭐ 0</span>
+                    </div>
+                    <div class="progress-track">
+                        <div id="progress-bar" class="progress-fill"></div>
+                    </div>
+                </header>
+                
+                <h2 id="question-text" class="question-text">Cargando...</h2>
+                
+                <div id="options-container" class="options-list"></div>
 
-    <button class="btn-principal" id="btnComenzar">Comenzar repaso </button>
-  </section>
+                <div id="feedback-container" class="feedback-box hidden">
+                    <p id="feedback-text"></p>
+                    <button id="next-btn" class="btn-next hidden">Siguiente ➡️</button>
+                </div>
+            </div>
+        </section>
 
-  <!-- PANTALLA DEL EXAMEN -->
-  <section id="pantallaExamen" class="pantalla">
-    <div class="encabezado-examen">
-      <div class="contador-preguntas">
-        Pregunta <span id="numPregunta">1</span> de <span id="totalPreguntas">20</span>
-      </div>
-      <div class="tema-pregunta" id="temaPregunta"></div>
-    </div>
+        <!-- PANTALLA DE RESULTADOS -->
+        <section id="result-screen" class="screen">
+            <div class="glass-card result-card">
+                <div class="result-emoji" id="result-emoji">🎉</div>
+                <h1 id="result-title">¡Examen Terminado!</h1>
+                <div class="score-display">
+                    <span id="final-score">0</span>
+                    <span class="score-total">/ 20</span>
+                </div>
+                <p id="result-message" class="result-message"></p>
+                <button id="restart-btn" class="btn-main">Intentar de nuevo 🔄</button>
+            </div>
+        </section>
 
-    <div class="progreso-contenedor">
-      <div class="progreso" id="progreso"></div>
-    </div>
+    </main>
 
-    <div class="pregunta-contenedor">
-      <h2 id="textoPregunta"></h2>
-      <div id="opcionesContainer"></div>
-      <div class="justificacion" id="justificacion"></div>
-    </div>
-
-    <div class="botones-navegacion">
-      <button class="btn-secundario" id="btnAnterior" disabled>← Anterior</button>
-      <button class="btn-principal" id="btnSiguiente" disabled>Siguiente →</button>
-    </div>
-  </section>
-
-  <!-- PANTALLA FINAL -->
-  <section id="pantallaFinal" class="pantalla">
-    <div class="resultado-final">
-      <div class="corazon-grande">❤️</div>
-      <h1>¡Examen terminado!</h1>
-      <div class="puntaje-grande" id="puntajeFinal">0 / 20</div>
-      <div class="porcentaje" id="porcentajeFinal">0%</div>
-      <p class="mensaje-final" id="mensajeFinal"></p>
-
-      <div class="resumen-temas" id="resumenTemas"></div>
-
-      <div class="botones-finales">
-        <button class="btn-secundario" id="btnRepasar">Repasar de nuevo 🔄</button>
-        <button class="btn-principal" id="btnVerErrores">Ver solo errores ❌</button>
-      </div>
-    </div>
-  </section>
-
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

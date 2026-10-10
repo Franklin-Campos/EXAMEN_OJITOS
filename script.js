@@ -1,478 +1,203 @@
-// ==================== DATOS DEL CUESTIONARIO ====================
-const preguntas = [
-  {
-    id: 1,
-    tema: "Humanismo",
-    pregunta: "¿Qué fue el Humanismo durante la Edad Moderna?",
-    opciones: {
-      A: "Un movimiento que rechazó completamente la cultura clásica.",
-      B: "Un movimiento intelectual que colocó al ser humano y la razón en un lugar central.",
-      C: "Un movimiento exclusivamente religioso.",
-      D: "Una corriente política que defendía las monarquías absolutas."
-    },
-    correcta: "B",
-    justificacion: "El Humanismo fue un movimiento intelectual que recuperó el estudio de la cultura clásica y destacó la capacidad, dignidad y razón del ser humano."
-  },
-  {
-    id: 2,
-    tema: "Renacimiento",
-    pregunta: "¿Cuál fue una característica importante del Renacimiento?",
-    opciones: {
-      A: "El rechazo de la cultura grecorromana.",
-      B: "El interés por la cultura clásica, las artes y el conocimiento científico.",
-      C: "La desaparición de las actividades comerciales.",
-      D: "El aislamiento cultural de Europa."
-    },
-    correcta: "B",
-    justificacion: "El Renacimiento recuperó los modelos culturales de Grecia y Roma y promovió importantes avances en las artes, las ciencias y el pensamiento."
-  },
-  {
-    id: 3,
-    tema: "Renacimiento",
-    pregunta: "¿En qué región europea tuvo su origen el Renacimiento?",
-    opciones: {
-      A: "Italia.",
-      B: "Inglaterra.",
-      C: "Rusia.",
-      D: "Portugal."
-    },
-    correcta: "A",
-    justificacion: "El Renacimiento surgió principalmente en las ciudades italianas, como Florencia, Venecia y Roma, y posteriormente se difundió por Europa."
-  },
-  {
-    id: 4,
-    tema: "Descubrimientos",
-    pregunta: "¿Cuál fue una de las principales causas de los descubrimientos geográficos de los siglos XV y XVI?",
-    opciones: {
-      A: "La búsqueda de nuevas rutas comerciales hacia Asia.",
-      B: "La desaparición del comercio europeo.",
-      C: "El deseo de abandonar las actividades marítimas.",
-      D: "La prohibición del comercio de especias."
-    },
-    correcta: "A",
-    justificacion: "Los europeos buscaban nuevas rutas hacia Asia para obtener productos como especias y metales preciosos, evitando las rutas comerciales tradicionales controladas por otros pueblos."
-  },
-  {
-    id: 5,
-    tema: "Descubrimientos",
-    pregunta: "¿Quién llegó a América en 1492 bajo el patrocinio de los Reyes Católicos?",
-    opciones: {
-      A: "Vasco da Gama.",
-      B: "Fernando de Magallanes.",
-      C: "Cristóbal Colón.",
-      D: "Américo Vespucio."
-    },
-    correcta: "C",
-    justificacion: "Cristóbal Colón llegó a América el 12 de octubre de 1492 durante una expedición financiada por los Reyes Católicos de España."
-  },
-  {
-    id: 6,
-    tema: "Reforma Protestante",
-    pregunta: "¿Qué fue la Reforma Protestante?",
-    opciones: {
-      A: "Un movimiento que buscó reformar aspectos de la Iglesia católica y dio origen a nuevas iglesias cristianas.",
-      B: "Una guerra entre España y Portugal.",
-      C: "Un movimiento artístico del Renacimiento.",
-      D: "Una revolución política contra las monarquías."
-    },
-    correcta: "A",
-    justificacion: "La Reforma Protestante comenzó en el siglo XVI como una crítica a determinadas prácticas y doctrinas de la Iglesia católica, dando origen a diversas iglesias protestantes."
-  },
-  {
-    id: 7,
-    tema: "Reforma Protestante",
-    pregunta: "¿Quién inició la Reforma Protestante en Alemania?",
-    opciones: {
-      A: "Juan Calvino.",
-      B: "Martín Lutero.",
-      C: "Enrique VIII.",
-      D: "Ignacio de Loyola."
-    },
-    correcta: "B",
-    justificacion: "Martín Lutero cuestionó diversas prácticas de la Iglesia católica y en 1517 difundió sus famosas 95 tesis, hecho considerado fundamental para el inicio de la Reforma."
-  },
-  {
-    id: 8,
-    tema: "Reforma Protestante",
-    pregunta: "¿Qué documento presentó Martín Lutero en 1517?",
-    opciones: {
-      A: "Las 95 tesis.",
-      B: "El Edicto de Nantes.",
-      C: "La Declaración de Independencia.",
-      D: "La Carta Magna."
-    },
-    correcta: "A",
-    justificacion: "Las 95 tesis criticaban especialmente la venta de indulgencias y planteaban cuestiones relacionadas con la doctrina y las prácticas de la Iglesia."
-  },
-  {
-    id: 9,
-    tema: "Reforma Protestante",
-    pregunta: "¿Qué reformador estuvo relacionado con el desarrollo del calvinismo?",
-    opciones: {
-      A: "Juan Calvino.",
-      B: "Martín Lutero.",
-      C: "Enrique VIII.",
-      D: "Carlos V."
-    },
-    correcta: "A",
-    justificacion: "Juan Calvino fue uno de los principales líderes de la Reforma Protestante y desarrolló una doctrina cristiana que tuvo gran influencia en Suiza y posteriormente en otras regiones de Europa."
-  },
-  {
-    id: 10,
-    tema: "Reforma Protestante",
-    pregunta: "¿Por qué surgió la Iglesia Anglicana?",
-    opciones: {
-      A: "Por la decisión de Enrique VIII de separarse de la autoridad del papa.",
-      B: "Por la llegada de Cristóbal Colón a América.",
-      C: "Por las ideas de Juan Calvino en Francia.",
-      D: "Por la Revolución Francesa."
-    },
-    correcta: "A",
-    justificacion: "Enrique VIII rompió con la autoridad papal y estableció la Iglesia de Inglaterra, proceso que dio origen a la Iglesia Anglicana."
-  },
-  {
-    id: 11,
-    tema: "Contrarreforma",
-    pregunta: "¿Qué fue la Contrarreforma Católica?",
-    opciones: {
-      A: "La respuesta de la Iglesia católica frente a la Reforma Protestante.",
-      B: "Una revolución contra los reyes europeos.",
-      C: "Una corriente artística exclusivamente italiana.",
-      D: "Un movimiento para eliminar las órdenes religiosas."
-    },
-    correcta: "A",
-    justificacion: "La Contrarreforma fue el proceso de renovación interna y defensa doctrinal desarrollado por la Iglesia católica frente al avance de las ideas protestantes."
-  },
-  {
-    id: 12,
-    tema: "Contrarreforma",
-    pregunta: "¿Qué importante acontecimiento estuvo relacionado con la Contrarreforma?",
-    opciones: {
-      A: "El Concilio de Trento.",
-      B: "La llegada de Colón a América.",
-      C: "La independencia de las Trece Colonias.",
-      D: "La Revolución Industrial."
-    },
-    correcta: "A",
-    justificacion: "El Concilio de Trento (1545–1563) reafirmó doctrinas católicas y estableció medidas de reforma y disciplina dentro de la Iglesia."
-  },
-  {
-    id: 13,
-    tema: "Monarquía absoluta",
-    pregunta: "¿Qué característica tuvo la monarquía absoluta durante la Edad Moderna?",
-    opciones: {
-      A: "El poder político estaba concentrado principalmente en el monarca.",
-      B: "El pueblo elegía directamente al rey.",
-      C: "No existían ejércitos permanentes.",
-      D: "El rey no tenía ninguna autoridad política."
-    },
-    correcta: "A",
-    justificacion: "En las monarquías absolutas, el rey concentraba amplias funciones políticas y administrativas y ejercía un fuerte control sobre el Estado."
-  },
-  {
-    id: 14,
-    tema: "Monarquía absoluta",
-    pregunta: "¿Cuál de los siguientes monarcas es considerado uno de los principales representantes del absolutismo?",
-    opciones: {
-      A: "Luis XIV de Francia.",
-      B: "George Washington.",
-      C: "Cristóbal Colón.",
-      D: "Martín Lutero."
-    },
-    correcta: "A",
-    justificacion: "Luis XIV es uno de los principales ejemplos del absolutismo monárquico. Se le atribuye la conocida expresión “El Estado soy yo”, aunque su autenticidad histórica es discutida."
-  },
-  {
-    id: 15,
-    tema: "Ilustración",
-    pregunta: "¿Qué fue la Ilustración?",
-    opciones: {
-      A: "Un movimiento intelectual que defendió el uso de la razón y cuestionó estructuras tradicionales.",
-      B: "Un movimiento exclusivamente religioso.",
-      C: "Una guerra entre Francia e Inglaterra.",
-      D: "Una corriente artística medieval."
-    },
-    correcta: "A",
-    justificacion: "La Ilustración del siglo XVIII promovió la razón, la libertad, el conocimiento, la educación y la crítica de las instituciones tradicionales."
-  },
-  {
-    id: 16,
-    tema: "Ilustración",
-    pregunta: "¿Cuál de los siguientes pensadores fue representante de la Ilustración?",
-    opciones: {
-      A: "Voltaire.",
-      B: "Miguel Ángel.",
-      C: "Hernán Cortés.",
-      D: "Rodrigo Díaz de Vivar."
-    },
-    correcta: "A",
-    justificacion: "Voltaire fue uno de los principales pensadores ilustrados y defendió ideas relacionadas con la libertad de pensamiento y la tolerancia."
-  },
-  {
-    id: 17,
-    tema: "Despotismo ilustrado",
-    pregunta: "¿Qué se entiende por despotismo ilustrado?",
-    opciones: {
-      A: "Una forma de gobierno que combinó el poder absoluto de los monarcas con algunas ideas de la Ilustración.",
-      B: "Un sistema democrático basado en el sufragio universal.",
-      C: "Un gobierno dirigido exclusivamente por la Iglesia.",
-      D: "La eliminación de todas las monarquías europeas."
-    },
-    correcta: "A",
-    justificacion: "Los monarcas ilustrados impulsaron reformas educativas, económicas y administrativas, pero mantuvieron la concentración del poder en sus manos."
-  },
-  {
-    id: 18,
-    tema: "Independencia EE.UU.",
-    pregunta: "¿Qué país dominaba las Trece Colonias antes de su independencia?",
-    opciones: {
-      A: "Francia.",
-      B: "España.",
-      C: "Gran Bretaña.",
-      D: "Portugal."
-    },
-    correcta: "C",
-    justificacion: "Las Trece Colonias de América del Norte estaban bajo dominio británico antes de iniciar su proceso de independencia."
-  },
-  {
-    id: 19,
-    tema: "Independencia EE.UU.",
-    pregunta: "¿En qué año se proclamó la Declaración de Independencia de los Estados Unidos?",
-    opciones: {
-      A: "1492.",
-      B: "1688.",
-      C: "1776.",
-      D: "1789."
-    },
-    correcta: "C",
-    justificacion: "La Declaración de Independencia fue aprobada el 4 de julio de 1776, proclamando la separación de las Trece Colonias respecto de Gran Bretaña."
-  },
-  {
-    id: 20,
-    tema: "Independencia EE.UU.",
-    pregunta: "¿Quién fue uno de los principales líderes de la independencia de las Trece Colonias y posteriormente primer presidente de Estados Unidos?",
-    opciones: {
-      A: "George Washington.",
-      B: "Luis XIV.",
-      C: "Juan Calvino.",
-      D: "Napoleón Bonaparte."
-    },
-    correcta: "A",
-    justificacion: "George Washington dirigió al ejército continental durante la Guerra de Independencia y posteriormente se convirtió en el primer presidente de los Estados Unidos."
-  }
+// ============================================================
+// BANCO DE 50 PREGUNTAS
+// ============================================================
+const questions = [
+    // --- RAZONAMIENTO VERBAL ---
+    { question: "En las oraciones 'Me duele el pie' y 'Llegamos al pie de la montaña', la palabra 'pie' evidencia:", options: ["homonimia", "polisemia", "sinonimia", "antonimia"], correct: 1, explanation: "Es polisemia porque es una sola palabra con varios significados relacionados entre sí." },
+    { question: "Elige el antónimo de LOCUAZ:", options: ["verboso", "hablador", "taciturno", "elocuente"], correct: 2, explanation: "Locuaz es 'que habla mucho'; taciturno es 'callado y reservado'." },
+    { question: "¿Cuál es un par de antónimos complementarios?", options: ["grande – pequeño", "caliente – frío", "vivo – muerto", "alto – bajo"], correct: 2, explanation: "En los complementarios, negar uno implica afirmar el otro: no estar vivo es estar muerto." },
+    { question: "El hiperónimo inmediato de roble, pino, cedro y eucalipto es:", options: ["bosque", "madera", "árbol", "naturaleza"], correct: 2, explanation: "Hiperónimo es el término más general que incluye a los demás; todos son tipos de árbol." },
+    { question: "¿Cuál de los siguientes pares es de cohipónimos?", options: ["perro – animal", "tigre – león", "flor – rosa", "mamífero – gato"], correct: 1, explanation: "Los cohipónimos son hipónimos del mismo hiperónimo; tigre y león son felinos." },
+    { question: "Violín es hipónimo de:", options: ["orquesta", "concierto", "música", "instrumento de cuerda"], correct: 3, explanation: "El violín es un tipo de instrumento de cuerda, y esa es la relación de inclusión." },
+
+    // --- LENGUAJE ---
+    { question: "¿En qué alternativa todas las palabras son variables?", options: ["con, y, pero", "niño, bello, canta", "hoy, aquí, nunca", "ante, sobre, tras"], correct: 1, explanation: "Sustantivo, adjetivo y verbo son clases variables. Las demás tienen preposiciones, conjunciones y adverbios." },
+    { question: "En la palabra niñitas, el segmento -it- es un morfema:", options: ["flexivo", "lexema", "derivativo", "independiente"], correct: 2, explanation: "Es un sufijo derivativo apreciativo (diminutivo). El flexivo es -as y el lexema es niñ-." },
+    { question: "¿Cuál es una palabra derivada?", options: ["sacapuntas", "lavavajillas", "zapatería", "paraguas"], correct: 2, explanation: "Zapatería nace de zapato + el sufijo -ería. Las otras son compuestas." },
+    { question: "¿Cuál es una palabra parasintética?", options: ["rehacer", "infelizmente", "cortaúñas", "enrojecer"], correct: 3, explanation: "Enrojecer lleva el prefijo en- y el sufijo -ecer a la vez, y no existen 'enrojo' ni 'rojecer'." },
+    { question: "¿Cuál es un caso de acortamiento?", options: ["UNMSM", "profe", "Dr.", "sida"], correct: 1, explanation: "Profe es la reducción de profesor. UNMSM es sigla, Dr. es abreviatura y sida es acrónimo." },
+    { question: "¿Cuál palabra se formó por acrónimo?", options: ["ofimática", "bici", "Sr.", "OEA"], correct: 0, explanation: "Ofimática une partes de oficina + informática. Bici es acortamiento, Sr. es abreviatura y OEA es sigla." },
+
+    // --- BIOLOGÍA ---
+    { question: "La hormona cuyo pico desencadena la ovulación es:", options: ["FSH", "progesterona", "LH", "prolactina"], correct: 2, explanation: "El pico de hormona luteinizante provoca la liberación del óvulo, hacia el día 14." },
+    { question: "Durante la fase proliferativa, el endometrio se regenera por acción de:", options: ["progesterona", "estrógenos", "testosterona", "oxitocina"], correct: 1, explanation: "Los estrógenos, secretados por los folículos en desarrollo, engrosan el endometrio." },
+    { question: "La fecundación ocurre normalmente en:", options: ["el útero", "el ovario", "la vagina", "la ampolla de la trompa de Falopio"], correct: 3, explanation: "El encuentro entre espermatozoide y óvulo se da en el tercio externo de la trompa." },
+    { question: "¿Quién demostró con Drosophila que los genes se localizan en los cromosomas?", options: ["Mendel", "Watson", "Morgan", "Darwin"], correct: 2, explanation: "Thomas Morgan comprobó la teoría cromosómica de la herencia con la mosca de la fruta." },
+    { question: "La trisomía del cromosoma 21 produce:", options: ["síndrome de Turner", "síndrome de Klinefelter", "síndrome de Edwards", "síndrome de Down"], correct: 3, explanation: "El síndrome de Down se debe a un cromosoma 21 extra (47 cromosomas)." },
+    { question: "Cuando mutan, los protooncogenes pueden convertirse en:", options: ["genes supresores", "oncogenes", "plásmidos", "transposones"], correct: 1, explanation: "Los oncogenes promueven la división celular descontrolada y contribuyen al cáncer." },
+    { question: "La producción de insulina humana por bacterias es un ejemplo de:", options: ["clonación reproductiva", "mutación espontánea", "ingeniería genética (ADN recombinante)", "selección natural"], correct: 2, explanation: "Se inserta el gen humano de la insulina en bacterias, que la fabrican." },
+
+    // --- ANATOMÍA ---
+    { question: "El sistema nervioso central está formado por:", options: ["nervios craneales y raquídeos", "encéfalo y médula espinal", "ganglios y nervios", "simpático y parasimpático"], correct: 1, explanation: "El SNC está formado por el encéfalo y la médula espinal." },
+    { question: "La función principal del cerebelo es:", options: ["regular la temperatura", "controlar la respiración", "coordinar el movimiento y el equilibrio", "almacenar la memoria a largo plazo"], correct: 2, explanation: "El cerebelo coordina los movimientos voluntarios, la postura y el equilibrio." },
+    { question: "Una respuesta típica del sistema nervioso simpático es:", options: ["bradicardia", "miosis", "aumento de la digestión", "taquicardia y dilatación de la pupila"], correct: 3, explanation: "El simpático prepara al cuerpo para 'luchar o huir'." },
+    { question: "El número de pares de nervios raquídeos (espinales) es:", options: ["12", "31", "24", "43"], correct: 1, explanation: "Son 31 pares: 8 cervicales, 12 torácicos, 5 lumbares, 5 sacros y 1 coccígeo." },
+
+    // --- HISTORIA UNIVERSAL ---
+    { question: "El inicio simbólico de la Revolución Francesa fue:", options: ["la ejecución de Luis XVI", "la toma de la Bastilla", "el golpe del 18 de Brumario", "el Congreso de Viena"], correct: 1, explanation: "La Bastilla fue tomada el 14 de julio de 1789." },
+    { question: "Una de las obras más duraderas de Napoleón Bonaparte fue:", options: ["la Santa Alianza", "el Terror", "el Código Civil de 1804", "la Declaración de 1789"], correct: 2, explanation: "El Código Napoleónico estableció la igualdad ante la ley y protegió la propiedad privada." },
+    { question: "El Congreso de Viena (1814-1815) se basó en el principio de:", options: ["soberanía popular", "libre mercado", "nacionalismo", "legitimidad y equilibrio europeo"], correct: 3, explanation: "Impulsado por Metternich, buscó restaurar las monarquías absolutas tras la derrota de Napoleón." },
+    { question: "La Primera Revolución Industrial se inició en:", options: ["Inglaterra, con la máquina de vapor y la industria textil", "Alemania, con la electricidad", "Estados Unidos, con el petróleo", "Francia, con el acero"], correct: 0, explanation: "Comenzó en Inglaterra hacia 1760 y se basó en el carbón, el vapor y el textil." },
+    { question: "¿Cuál fue una característica de la Segunda Revolución Industrial?", options: ["uso del carbón como única energía", "predominio de la manufactura artesanal", "el uso de la electricidad, el petróleo y el acero", "el telar mecánico"], correct: 2, explanation: "Hacia 1870 surgieron la electricidad, el motor de combustión interna, el acero y la química industrial." },
+
+    // --- HISTORIA DEL PERÚ ---
+    { question: "El hecho que originó la formación de Juntas de Gobierno en España y América fue:", options: ["la Revolución Francesa", "la invasión napoleónica y el cautiverio de Fernando VII", "la independencia de EE. UU.", "la rebelión de Túpac Amaru II"], correct: 1, explanation: "Napoleón invadió España en 1808 y los españoles formaron juntas para gobernar en nombre del rey." },
+    { question: "La Constitución de Cádiz (1812) estableció:", options: ["una monarquía constitucional con soberanía nacional", "una república", "el absolutismo", "el virreinato hereditario"], correct: 0, explanation: "Fue una constitución liberal que limitó el poder del rey y reconoció la soberanía de la nación." },
+    { question: "Francisco Antonio de Zela lideró en 1811 la rebelión de:", options: ["Huánuco", "Cusco", "Tacna", "Arequipa"], correct: 2, explanation: "Zela encabezó el levantamiento mestizo de Tacna, que fue reprimido rápidamente." },
+    { question: "La rebelión de 1814 en el Cusco fue dirigida por:", options: ["los hermanos Angulo y Mateo Pumacahua", "Zela y Paillardelli", "Crespo y Castillo", "Túpac Amaru y Micaela Bastidas"], correct: 0, explanation: "Los Angulo y el cacique Pumacahua lideraron esta rebelión, que abarcó el sur andino." },
+    { question: "La Expedición Libertadora de San Martín desembarcó en 1820 en:", options: ["Callao", "Paracas (Pisco)", "Ilo", "Huacho"], correct: 1, explanation: "Llegó a la bahía de Paracas en setiembre de 1820, y desde allí inició la campaña." },
+    { question: "La batalla que selló la independencia del Perú fue:", options: ["Pichincha", "Ayacucho", "Boyacá", "Maipú"], correct: 1, explanation: "El 9 de diciembre de 1824, Sucre venció a los realistas en la Pampa de la Quinua." },
+    { question: "Durante el gobierno de Alberto Fujimori, el 5 de abril de 1992 ocurrió:", options: ["la Constitución de 1979", "el autogolpe, con la disolución del Congreso", "la guerra con Chile", "la captura de Montesinos"], correct: 1, explanation: "Fujimori disolvió el Congreso e intervino el Poder Judicial. Después se aprobó la Constitución de 1993." },
+
+    // --- GEOGRAFÍA ---
+    { question: "Una característica del espacio rural es:", options: ["alta densidad poblacional", "predominio de actividades primarias", "predominio de servicios", "industria pesada"], correct: 1, explanation: "En el espacio rural predominan la agricultura, la ganadería y la pesca, con baja densidad poblacional." },
+    { question: "El principal recurso pesquero del Perú, destinado sobre todo a harina de pescado, es:", options: ["la merluza", "el bonito", "la anchoveta", "la corvina"], correct: 2, explanation: "La anchoveta abunda por la corriente de Humboldt." },
+    { question: "¿Cuál es una actividad del sector secundario?", options: ["pesca", "minería", "comercio", "manufactura"], correct: 3, explanation: "El sector secundario transforma materias primas en productos elaborados." },
+    { question: "La tasa de natalidad expresa:", options: ["el número de muertes por cada 1000 habitantes", "el número de nacimientos por cada 1000 habitantes en un año", "el número de migrantes", "el crecimiento económico"], correct: 1, explanation: "Se calcula con el número de nacidos vivos por cada mil habitantes en un año." },
+    { question: "Un efecto del éxodo rural es:", options: ["el despoblamiento de las ciudades", "el aumento de la producción agrícola", "el crecimiento de asentamientos humanos en la periferia urbana", "la reducción de la demanda de servicios"], correct: 2, explanation: "El campo expulsa población hacia las ciudades, que crecen de forma desordenada." },
+    { question: "El organismo que administra las Áreas Naturales Protegidas del Perú es:", options: ["SERNANP", "OEFA", "SUNAT", "INDECOPI"], correct: 0, explanation: "El SERNANP gestiona el SINANPE. El OEFA fiscaliza en materia ambiental." },
+
+    // --- ECONOMÍA ---
+    { question: "La entidad que emite billetes y monedas en el Perú es:", options: ["la SBS", "el Banco de la Nación", "el MEF", "el BCRP"], correct: 3, explanation: "El Banco Central de Reserva del Perú emite la moneda y busca preservar la estabilidad monetaria." },
+    { question: "Cuando el dinero se guarda para usarlo en el futuro, cumple la función de:", options: ["medio de cambio", "unidad de cuenta", "reserva de valor", "patrón de pagos"], correct: 2, explanation: "El ahorro conserva valor a lo largo del tiempo." },
+    { question: "La inflación se mide en el Perú principalmente con:", options: ["el IPC", "el PBI", "el tipo de cambio", "la tasa de desempleo"], correct: 0, explanation: "El Índice de Precios al Consumidor mide la variación de los precios de una canasta." },
+    { question: "La Ley de Presupuesto del Sector Público es aprobada por:", options: ["el Ministerio de Economía", "el Presidente de la República", "el Banco Central", "el Congreso de la República"], correct: 3, explanation: "El Ejecutivo (MEF) formula el proyecto y el Congreso lo aprueba." },
+
+    // --- EDUCACIÓN CÍVICA ---
+    { question: "La máxima autoridad ejecutiva de un gobierno regional es el:", options: ["alcalde", "prefecto", "gobernador regional", "ministro"], correct: 2, explanation: "Los gobiernos regionales los dirige el gobernador regional." },
+    { question: "El Informe Final de la Comisión de la Verdad y Reconciliación (CVR) se entregó en:", options: ["1992", "2003", "2011", "1980"], correct: 1, explanation: "Se presentó en agosto de 2003. Investigó la violencia ocurrida entre 1980 y 2000." },
+    { question: "La actitud de respetar y valorar las diferencias culturales y dialogar en igualdad se llama:", options: ["etnocentrismo", "asimilación", "interculturalidad", "discriminación"], correct: 2, explanation: "La interculturalidad reconoce la diversidad étnica y lingüística." },
+    { question: "El mecanismo de participación ciudadana que permite destituir a alcaldes y gobernadores mediante votación es:", options: ["la revocatoria", "el referéndum", "la iniciativa legislativa", "la consulta previa"], correct: 0, explanation: "La revocatoria somete a consulta popular la continuidad de una autoridad elegida." },
+    { question: "La consulta previa es un derecho de:", options: ["los pueblos indígenas u originarios, antes de medidas que afecten sus derechos colectivos", "todos los funcionarios públicos", "los partidos políticos", "las empresas mineras"], correct: 0, explanation: "Lo reconoce la Ley 29785 y garantiza que estos pueblos sean consultados." }
 ];
 
-// ==================== ESTADO ====================
-let indiceActual = 0;
-let respuestas = {};
-let respondidas = 0;
-const totalPreguntas = preguntas.length;
+// ============================================================
+// LÓGICA DEL EXAMEN
+// ============================================================
+let currentQuestionIndex = 0;
+let score = 0;
+let answered = false;
 
-// ==================== ELEMENTOS DEL DOM ====================
-const pantallaInicio = document.getElementById('pantallaInicio');
-const pantallaExamen = document.getElementById('pantallaExamen');
-const pantallaFinal = document.getElementById('pantallaFinal');
+const startScreen = document.getElementById('start-screen');
+const quizScreen = document.getElementById('quiz-screen');
+const resultScreen = document.getElementById('result-screen');
+const startBtn = document.getElementById('start-btn');
+const questionCounter = document.getElementById('question-counter');
+const scoreLive = document.getElementById('score-live');
+const questionText = document.getElementById('question-text');
+const optionsContainer = document.getElementById('options-container');
+const progressBar = document.getElementById('progress-bar');
+const feedbackContainer = document.getElementById('feedback-container');
+const feedbackText = document.getElementById('feedback-text');
+const nextBtn = document.getElementById('next-btn');
+const finalScore = document.getElementById('final-score');
+const resultTitle = document.getElementById('result-title');
+const resultMessage = document.getElementById('result-message');
+const resultEmoji = document.getElementById('result-emoji');
+const restartBtn = document.getElementById('restart-btn');
+const profilePhoto = document.getElementById('profile-photo');
 
-const btnComenzar = document.getElementById('btnComenzar');
-const numPregunta = document.getElementById('numPregunta');
-const totalPreguntasSpan = document.getElementById('totalPreguntas');
-const temaPregunta = document.getElementById('temaPregunta');
-const progreso = document.getElementById('progreso');
-const textoPregunta = document.getElementById('textoPregunta');
-const opcionesContainer = document.getElementById('opcionesContainer');
-const justificacion = document.getElementById('justificacion');
-const btnAnterior = document.getElementById('btnAnterior');
-const btnSiguiente = document.getElementById('btnSiguiente');
+// Fallback por si no encuentra la foto
+profilePhoto.onerror = function() {
+    this.src = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNTAiIGhlaWdodD0iMTUwIiB2aWV3Qm94PSIwIDAgMTUwIDE1MCI+PHJlY3Qgd2lkdGg9IjE1MCIgaGVpZ2h0PSIxNTAiIGZpbGw9IiNmZmM0ZTMiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSI0MCIgZmlsbD0iI2ZmNmI5ZCI+RnJpZW5kPC90ZXh0Pjwvc3ZnPg==';
+};
 
-const puntajeFinal = document.getElementById('puntajeFinal');
-const porcentajeFinal = document.getElementById('porcentajeFinal');
-const mensajeFinal = document.getElementById('mensajeFinal');
-const resumenTemas = document.getElementById('resumenTemas');
-const btnRepasar = document.getElementById('btnRepasar');
-const btnVerErrores = document.getElementById('btnVerErrores');
-
-// ==================== FUNCIONES ====================
-function mostrarPantalla(pantalla) {
-  document.querySelectorAll('.pantalla').forEach(p => p.classList.remove('activa'));
-  pantalla.classList.add('activa');
-}
-
-function renderizarPregunta() {
-  const p = preguntas[indiceActual];
-
-  numPregunta.textContent = indiceActual + 1;
-  totalPreguntasSpan.textContent = totalPreguntas;
-  temaPregunta.textContent = p.tema;
-
-  const porcentaje = ((indiceActual + 1) / totalPreguntas) * 100;
-  progreso.style.width = porcentaje + '%';
-
-  textoPregunta.textContent = `${indiceActual + 1}. ${p.pregunta}`;
-
-  let htmlOpciones = '';
-  Object.entries(p.opciones).forEach(([letra, texto]) => {
-    htmlOpciones += `
-      <div class="opcion" data-letra="${letra}">
-        <strong>${letra})</strong> ${texto}
-      </div>
-    `;
-  });
-  opcionesContainer.innerHTML = htmlOpciones;
-
-  const respuestaGuardada = respuestas[p.id];
-  if (respuestaGuardada) {
-    marcarRespuesta(p, respuestaGuardada);
-  } else {
-    justificacion.classList.remove('visible');
-    justificacion.innerHTML = '';
-  }
-
-  btnAnterior.disabled = indiceActual === 0;
-  btnSiguiente.disabled = !respuestas[p.id];
-
-  if (indiceActual === totalPreguntas - 1) {
-    btnSiguiente.textContent = 'Finalizar ✓';
-  } else {
-    btnSiguiente.textContent = 'Siguiente →';
-  }
-}
-
-function marcarRespuesta(p, letraElegida) {
-  const opciones = opcionesContainer.querySelectorAll('.opcion');
-  const esCorrecta = letraElegida === p.correcta;
-
-  opciones.forEach(op => {
-    op.classList.add('bloqueada');
-    if (op.dataset.letra === p.correcta) {
-      op.classList.add('correcta');
-    } else if (op.dataset.letra === letraElegida && !esCorrecta) {
-      op.classList.add('incorrecta');
-    }
-    if (op.dataset.letra === letraElegida) {
-      op.classList.add('seleccionada');
-    }
-  });
-
-  justificacion.innerHTML = `
-    <strong>${esCorrecta ? '✅ ¡Correcto!' : '❌ Incorrecto'}</strong><br>
-    La respuesta correcta es <strong>${p.correcta}) ${p.opciones[p.correcta]}</strong><br><br>
-    <em>${p.justificacion}</em>
-  `;
-  justificacion.classList.add('visible');
-}
-
-function seleccionarOpcion(letra) {
-  const p = preguntas[indiceActual];
-  if (respuestas[p.id]) return;
-
-  respuestas[p.id] = letra;
-  respondidas++;
-
-  marcarRespuesta(p, letra);
-  btnSiguiente.disabled = false;
-}
-
-function irSiguiente() {
-  if (indiceActual < totalPreguntas - 1) {
-    indiceActual++;
-    renderizarPregunta();
-  } else {
-    finalizarExamen();
-  }
-}
-
-function irAnterior() {
-  if (indiceActual > 0) {
-    indiceActual--;
-    renderizarPregunta();
-  }
-}
-
-function finalizarExamen() {
-  let correctas = 0;
-  const porTema = {};
-
-  preguntas.forEach(p => {
-    if (!porTema[p.tema]) porTema[p.tema] = { correctas: 0, total: 0 };
-    porTema[p.tema].total++;
-    if (respuestas[p.id] === p.correcta) {
-      correctas++;
-      porTema[p.tema].correctas++;
-    }
-  });
-
-  const porcentaje = Math.round((correctas / totalPreguntas) * 100);
-
-  puntajeFinal.textContent = `${correctas} / ${totalPreguntas}`;
-  porcentajeFinal.textContent = `${porcentaje}%`;
-
-  let mensaje = '';
-  if (porcentaje === 100) {
-    mensaje = '¡Perfecto! Eres una genia ojitos .';
-  } else if (porcentaje >= 80) {
-    mensaje = '¡Excelente! Sabes muchísimo ojitos ';
-  } else if (porcentaje >= 60) {
-    mensaje = '¡Muy bien! Tienes buenos conocimientos. Un repasito más y perfecto ojitos ';
-  } else if (porcentaje >= 40) {
-    mensaje = 'No está mal, ojitos . Repasemos juntos antes del domingo. 💘';
-  } else {
-    mensaje = 'Tranquila, ojitos . Lo importante es repasar. Te acompaño a estudiar. 💝';
-  }
-  mensajeFinal.textContent = mensaje;
-
-  let resumenHTML = '<h3>Resumen por tema</h3>';
-  Object.entries(porTema).forEach(([tema, datos]) => {
-    const pct = Math.round((datos.correctas / datos.total) * 100);
-    resumenHTML += `
-      <div class="tema-fila">
-        <span>${tema}</span>
-        <span><strong>${datos.correctas}/${datos.total}</strong> (${pct}%)</span>
-      </div>
-    `;
-  });
-  resumenTemas.innerHTML = resumenHTML;
-
-  mostrarPantalla(pantallaFinal);
-}
-
-function reiniciarExamen() {
-  indiceActual = 0;
-  respuestas = {};
-  respondidas = 0;
-  progreso.style.width = '5%';
-  mostrarPantalla(pantallaInicio);
-}
-
-// ==================== EVENTOS ====================
-btnComenzar.addEventListener('click', () => {
-  indiceActual = 0;
-  respuestas = {};
-  respondidas = 0;
-  mostrarPantalla(pantallaExamen);
-  renderizarPregunta();
+startBtn.addEventListener('click', () => {
+    startScreen.classList.remove('active');
+    quizScreen.classList.add('active');
+    loadQuestion();
 });
 
-opcionesContainer.addEventListener('click', (e) => {
-  const opcion = e.target.closest('.opcion');
-  if (!opcion || opcion.classList.contains('bloqueada')) return;
-  seleccionarOpcion(opcion.dataset.letra);
+function loadQuestion() {
+    answered = false;
+    const question = questions[currentQuestionIndex];
+    
+    questionCounter.textContent = `${currentQuestionIndex + 1} / ${questions.length}`;
+    scoreLive.textContent = `⭐ ${score}`;
+    progressBar.style.width = `${(currentQuestionIndex / questions.length) * 100}%`;
+    
+    questionText.textContent = question.question;
+    
+    optionsContainer.innerHTML = '';
+    feedbackContainer.classList.add('hidden');
+    nextBtn.classList.add('hidden');
+    
+    question.options.forEach((option, index) => {
+        const btn = document.createElement('button');
+        btn.classList.add('option-btn');
+        btn.innerHTML = `<span class="option-letter">${String.fromCharCode(65 + index)}</span> ${option}`;
+        btn.dataset.index = index;
+        btn.addEventListener('click', () => selectOption(index, btn));
+        optionsContainer.appendChild(btn);
+    });
+}
+
+function selectOption(selectedIndex, btnElement) {
+    if (answered) return;
+    answered = true;
+    
+    const question = questions[currentQuestionIndex];
+    const allButtons = document.querySelectorAll('.option-btn');
+    
+    allButtons.forEach(btn => btn.disabled = true);
+    
+    if (selectedIndex === question.correct) {
+        score++;
+        btnElement.classList.add('correct');
+        feedbackText.innerHTML = `✅ <strong>¡Correcto!</strong> ${question.explanation}`;
+    } else {
+        btnElement.classList.add('incorrect');
+        allButtons[question.correct].classList.add('correct');
+        feedbackText.innerHTML = `❌ <strong>Incorrecto.</strong> La respuesta correcta era la <strong>${String.fromCharCode(65 + question.correct)}</strong>. ${question.explanation}`;
+    }
+    
+    scoreLive.textContent = `⭐ ${score}`;
+    feedbackContainer.classList.remove('hidden');
+    nextBtn.classList.remove('hidden');
+    feedbackContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+nextBtn.addEventListener('click', () => {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+        loadQuestion();
+    } else {
+        showResults();
+    }
 });
 
-btnSiguiente.addEventListener('click', irSiguiente);
-btnAnterior.addEventListener('click', irAnterior);
+function showResults() {
+    quizScreen.classList.remove('active');
+    resultScreen.classList.add('active');
+    
+    let nota = Math.round((score / questions.length) * 20);
+    if (nota === 0) nota = 1;
+    
+    finalScore.textContent = nota;
+    
+    if (nota >= 18) {
+        resultEmoji.textContent = '🏆';
+        resultTitle.textContent = '¡Eres una GENIA!';
+        resultMessage.textContent = '¡Increíble! Estoy tan orgulloso de ti. Sabía que podías lograrlo. Mañana te va a ir espectacular. ¡Mucha suerte, preciosa! 💖';
+    } else if (nota >= 15) {
+        resultEmoji.textContent = '🌟';
+        resultTitle.textContent = '¡Excelente trabajo!';
+        resultMessage.textContent = '¡Muy bien! Tienes una base sólida. Repasa un poquito más esos detalles y estarás imparable. ¡Confío en ti! ✨';
+    } else if (nota >= 11) {
+        resultEmoji.textContent = '💪';
+        resultTitle.textContent = '¡Buen intento!';
+        resultMessage.textContent = 'Vas por buen camino. No te desanimes, repasa las que fallaste y verás que mañana te irá mucho mejor. ¡Tú puedes con esto y más! 🌸';
+    } else {
+        resultEmoji.textContent = '❤️';
+        resultTitle.textContent = '¡No te rindas!';
+        resultMessage.textContent = 'El examen de mañana es una oportunidad para demostrar lo que sabes. Repasa con calma, descansa bien y verás que todo saldrá bien. Estoy aquí para apoyarte. ¡Ánimo! 🌈';
+    }
+}
 
-btnRepasar.addEventListener('click', reiniciarExamen);
-
-btnVerErrores.addEventListener('click', () => {
-  const errores = preguntas.filter(p => respuestas[p.id] !== p.correcta);
-  if (errores.length === 0) {
-    alert('¡No tienes errores! Eres increíble, ojitos. 💕');
-    return;
-  }
-
-  let texto = '❌ Preguntas que fallaste:\n\n';
-  errores.forEach(p => {
-    texto += `• ${p.pregunta}\n  Respuesta correcta: ${p.correcta}) ${p.opciones[p.correcta]}\n\n`;
-  });
-  alert(texto);
+restartBtn.addEventListener('click', () => {
+    currentQuestionIndex = 0;
+    score = 0;
+    answered = false;
+    resultScreen.classList.remove('active');
+    startScreen.classList.add('active');
 });
